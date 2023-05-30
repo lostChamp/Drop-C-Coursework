@@ -56,13 +56,64 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     
-                    <StackPanel Grid.Column="1">
-                        
+                    <StackPanel Grid.Column="1" Visibility="Visible" x:Name="InfoProfile">
+                        <TextBlock Margin="20 0 0 0" FontSize="20" FontWeight="SemiBold">ФИО:</TextBlock>
+                        <TextBlock Margin="40 0 0 0" FontSize="20" x:Name="FIO"/>
+                        <TextBlock Margin="20 0 0 0" FontSize="20" FontWeight="SemiBold">Номер телефона:</TextBlock>
+                        <TextBlock Margin="40 0 0 0" FontSize="20" x:Name="Phone_number"/>
+                        <TextBlock Margin="20 0 0 0" FontSize="20" FontWeight="SemiBold">Почта:</TextBlock>
+                        <TextBlock Margin="40 0 0 0" FontSize="20" x:Name="Email"/>
                     </StackPanel>
                     
-                    <StackPanel>
+                    <ScrollViewer Grid.Column="1" Visibility="Hidden" x:Name="ScrollViewerEdit">
+                        <StackPanel Visibility="Hidden" x:Name="EditProfile">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                
+                                <TextBlock Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="26" FontWeight="SemiBold">Редактирование</TextBlock>
+                                
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock FontSize="20" Margin="5, 0,0, 0">*Email:</TextBlock>
+                                    <TextBox Height="50" Width="250" FontSize="28" x:Name="EmailEdit"></TextBox>
+                                    <TextBlock x:Name="EmailEx" Margin="5, 0,0, 0" Visibility="Hidden">Пользователь с таким email сщуествует</TextBlock>
+                                </StackPanel>
+                                
+                                <StackPanel Grid.Row="2">
+                                    <TextBlock FontSize="20" Margin="5, 0,0, 0">*Пароль:</TextBlock>
+                                    <TextBox Height="50" Width="250" FontSize="28" x:Name="PasswordEdit"></TextBox>
+                                    <TextBlock x:Name="PasswordEx" Margin="5, 0,0, 0" Visibility="Hidden">Пароль должен состоять минимум из 4 символов</TextBlock>
+                                </StackPanel>
+                                
+                                <StackPanel Grid.Row="3" >
+                                    <TextBlock FontSize="20" Margin="5, 0,0, 0">*Подтвердите пароль:</TextBlock>
+                                    <TextBox Height="50" Width="250" FontSize="28" x:Name="PasswordEditReplay"></TextBox>
+                                </StackPanel>
+                                
+                                <StackPanel Grid.Row="4">
+                                    <TextBlock FontSize="20" Margin="5, 0,0, 0">*ФИО:</TextBlock>
+                                    <TextBox Height="50" Width="250" FontSize="28" x:Name="Full_NameEdit"></TextBox>
+                                </StackPanel>
+                                
+                                <StackPanel Grid.Row="5" >
+                                    <TextBlock FontSize="20" Margin="5, 0,0, 0">*Номер телефона:</TextBlock>
+                                    <TextBox Height="50" Width="250" FontSize="28" x:Name="Phone_NumberEdit"></TextBox>
+                                </StackPanel>
+                                
+                                <Button Grid.Row="6" Height="50" Width="300" FontSize="20" Margin="10" Click="AcceptEditProfile_Button">Редактировать</Button>
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <StackPanel Grid.Column="0">
                         <Button Height="50" Width="300" Margin="5" FontSize="26">Заказы</Button>
-                        <Button Height="50" Width="300" Margin="5" FontSize="26">Изменить профиль</Button>
+                        <Button Height="50" Width="300" Margin="5" FontSize="26" Click="EditProfile_Button">Изменить профиль</Button>
                         <Button Height="50" Width="300" Margin="5" FontSize="26" Click="ExitOfAccount_Button">Выйти</Button>
                         <Button Height="50" Width="300" Margin="5" FontSize="26" Click="DeleteAccount_Button">Удалить аккаунт</Button>
                         <Button x:Name="RegNewUserForAdmin" Click="RegNewUser_Button" Height="50" Width="300" Margin="5" FontSize="26" Visibility="Visible">Создать пользователя</Button>

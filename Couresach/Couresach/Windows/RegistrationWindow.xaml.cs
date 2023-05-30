@@ -19,7 +19,7 @@ public partial class RegistrationWindow : Window
             EmailEx.Visibility = Visibility.Hidden;
             if (PasswordlReg.Text.Length >= 4)
             {
-                var role = DatabaseControl.GetRoleById(2);
+                var role = DatabaseControl.GetRoleByValue("USER");
                 DatabaseControl.RegistrationUser(new User
                 {
                     Email = EmailReg.Text,

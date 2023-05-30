@@ -15,6 +15,26 @@ public class DatabaseControl
         }
     }
 
+    public static User? EditUser(string email, string password, string full_name, string phone_number, string old_email)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            var user = ctx.User?.Where(p => p.Email==old_email).FirstOrDefault();
+            if (user != null)
+            {
+                user.Email = email;
+                user.Password = password;
+                user.Full_name = full_name;
+                user.Phone_number = phone_number;
+                user.Date_reg = user.Date_reg;
+                user.Role_id = user.Role_id;
+                ctx.User?.Update(user);
+            }
+            ctx.SaveChanges();
+            return user;
+        }
+    }
+
     public static User? GetUserByEmail(string email)
     {
         using (DbAppContext ctx = new DbAppContext())
