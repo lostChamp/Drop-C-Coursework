@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Константин\\Desktop\\coursach\\Couresach\\Couresach\\Couresach.csproj": {}
+    "C:\\Users\\Константин\\Desktop\\Coursework\\Couresach\\Couresach\\Couresach.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Константин\\Desktop\\coursach\\Couresach\\Couresach\\Couresach.csproj": {
+    "C:\\Users\\Константин\\Desktop\\Coursework\\Couresach\\Couresach\\Couresach.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Константин\\Desktop\\coursach\\Couresach\\Couresach\\Couresach.csproj",
+        "projectUniqueName": "C:\\Users\\Константин\\Desktop\\Coursework\\Couresach\\Couresach\\Couresach.csproj",
         "projectName": "Couresach",
-        "projectPath": "C:\\Users\\Константин\\Desktop\\coursach\\Couresach\\Couresach\\Couresach.csproj",
+        "projectPath": "C:\\Users\\Константин\\Desktop\\Coursework\\Couresach\\Couresach\\Couresach.csproj",
         "packagesPath": "C:\\Users\\Константин\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Константин\\Desktop\\coursach\\Couresach\\Couresach\\obj\\",
+        "outputPath": "C:\\Users\\Константин\\Desktop\\Coursework\\Couresach\\Couresach\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Константин\\AppData\\Roaming\\NuGet\\NuGet.Config"

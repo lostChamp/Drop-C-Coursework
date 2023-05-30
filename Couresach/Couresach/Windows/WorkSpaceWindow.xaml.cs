@@ -6,9 +6,11 @@ namespace Couresach;
 
 public partial class WorkSpaceWindow : Window
 {
+    private User user;
     public WorkSpaceWindow(User user)
     {
         InitializeComponent();
+        this.user = user;
         var role = DatabaseControl.GetRoleById(user.Role_id);
         if (role.Value == "USER")
         {
@@ -32,5 +34,13 @@ public partial class WorkSpaceWindow : Window
     {
         Window RegistrationForAdminWindow = new RegistrationForAdminWindow();
         RegistrationForAdminWindow.Show();
+    }
+
+    private void DeleteAccount_Button(object sender, RoutedEventArgs e)
+    {
+        DatabaseControl.DeleteUser(user);
+        Window AuthWindow = new AuthWindow();
+        AuthWindow.Show();
+        Close();
     }
 }

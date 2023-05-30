@@ -24,6 +24,15 @@ public class DatabaseControl
         }
     }
 
+    public static void DeleteUser(User user)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            ctx.User?.Remove(user);
+            ctx.SaveChanges();
+        }
+    }
+
     public static Role? GetRoleByValue(string value)
     {
         using (DbAppContext ctx = new DbAppContext())

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZrlPaWE//5LIJobjkMvGyeVkxfk3ap/hN5oZAoL7/nKNtzEpywHD27PwVW2YNVWa0jT0J/sli2T225oZ/d7rKg==",
+  "dgSpecHash": "QagD2sC/GG9LwAClmtrSYfI3c0pQTbIaJf9UU2zDEBIAc2BfbuSWj5QArnuvKIh9A27hWVOq4IAP71xfMYUrRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Константин\\Desktop\\coursach\\Couresach\\Couresach\\Couresach.csproj",
+  "projectFilePath": "C:\\Users\\Константин\\Desktop\\Coursework\\Couresach\\Couresach\\Couresach.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Константин\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0-preview.4.23259.3\\microsoft.entityframeworkcore.8.0.0-preview.4.23259.3.nupkg.sha512",
     "C:\\Users\\Константин\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0-preview.4.23259.3\\microsoft.entityframeworkcore.abstractions.8.0.0-preview.4.23259.3.nupkg.sha512",
