@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZrlPaWE//5LIJobjkMvGyeVkxfk3ap/hN5oZAoL7/nKNtzEpywHD27PwVW2YNVWa0jT0J/sli2T225oZ/d7rKg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Константин\\Desktop\\coursach\\Couresach\\Couresach\\Couresach.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0-preview.4.23259.3\\microsoft.entityframeworkcore.8.0.0-preview.4.23259.3.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0-preview.4.23259.3\\microsoft.entityframeworkcore.abstractions.8.0.0-preview.4.23259.3.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.0-preview.4.23259.3\\microsoft.entityframeworkcore.analyzers.8.0.0-preview.4.23259.3.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.0-preview.4.23259.3\\microsoft.entityframeworkcore.relational.8.0.0-preview.4.23259.3.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0-preview.4.23259.5\\microsoft.extensions.caching.abstractions.8.0.0-preview.4.23259.5.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0-preview.4.23259.5\\microsoft.extensions.caching.memory.8.0.0-preview.4.23259.5.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0-preview.4.23259.5\\microsoft.extensions.configuration.abstractions.8.0.0-preview.4.23259.5.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0-preview.4.23259.5\\microsoft.extensions.dependencyinjection.8.0.0-preview.4.23259.5.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0-preview.4.23259.5\\microsoft.extensions.dependencyinjection.abstractions.8.0.0-preview.4.23259.5.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0-preview.4.23259.5\\microsoft.extensions.logging.8.0.0-preview.4.23259.5.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0-preview.4.23259.5\\microsoft.extensions.logging.abstractions.8.0.0-preview.4.23259.5.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.extensions.options\\8.0.0-preview.4.23259.5\\microsoft.extensions.options.8.0.0-preview.4.23259.5.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0-preview.4.23259.5\\microsoft.extensions.primitives.8.0.0-preview.4.23259.5.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\npgsql\\8.0.0-preview.4\\npgsql.8.0.0-preview.4.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.0-preview.4\\npgsql.entityframeworkcore.postgresql.8.0.0-preview.4.nupkg.sha512"
+  ],
+  "logs": []
+}

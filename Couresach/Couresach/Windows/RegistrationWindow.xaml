@@ -1,0 +1,46 @@
+﻿<Window x:Class="Couresach.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Couresach"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="600" Width="350" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="26" FontWeight="SemiBold">Регистрация</TextBlock>
+        
+        <StackPanel Grid.Row="1">
+            
+            <TextBlock FontSize="20" Margin="5, 0,0, 0">Email:</TextBlock>
+            <TextBox Height="50" Width="250" FontSize="28" x:Name="EmailReg"></TextBox>
+            <TextBlock x:Name="EmailEx" Margin="5, 0,0, 0" Visibility="Hidden">Пользователь с таким email сщуествует</TextBlock>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2">
+            <TextBlock FontSize="20" Margin="5, 0,0, 0">Пароль:</TextBlock>
+            <TextBox Height="50" Width="250" FontSize="28" x:Name="PasswordlReg"></TextBox>
+            <TextBlock x:Name="PasswordEx" Margin="5, 0,0, 0" Visibility="Hidden">Пароль должен состоять минимум из 4 символов</TextBlock>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="3">
+            <TextBlock FontSize="20" Margin="5, 0,0, 0">ФИО:</TextBlock>
+            <TextBox Height="50" Width="250" FontSize="28" x:Name="Full_NameReg"></TextBox>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="4" >
+            <TextBlock FontSize="20" Margin="5, 0,0, 0">Номер телефона:</TextBlock>
+            <TextBox Height="50" Width="250" FontSize="28" x:Name="Phone_NumberReg"></TextBox>
+        </StackPanel>
+        
+        <Button Grid.Row="5" Height="50" Width="300" FontSize="20" Click="Registration_Button">Зарегистрироваться</Button>
+    </Grid>
+</Window>

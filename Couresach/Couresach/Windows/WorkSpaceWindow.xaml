@@ -1,0 +1,156 @@
+﻿<Window x:Class="Couresach.WorkSpaceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Couresach"
+        mc:Ignorable="d"
+        Title="Дроп С" Height="510" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Товары">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.6*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock FontSize="20">Тип:</TextBlock>
+                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5">
+                            <ComboBoxItem x:Name="TypeGuitar" FontSize="20">Гитары</ComboBoxItem>
+                            <ComboBoxItem x:Name="TypeStrings" FontSize="20">Струны</ComboBoxItem>
+                            <ComboBoxItem x:Name="TypePickup" FontSize="20">Звукосниматели</ComboBoxItem>
+                            <ComboBoxItem x:Name="TypeOther" FontSize="20">Расходники</ComboBoxItem>
+                        </ComboBox>
+                        
+                        <TextBlock FontSize="20">Производитель:</TextBlock>
+                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5">
+                            <ComboBoxItem x:Name="ManFender" FontSize="20">Fender</ComboBoxItem>
+                            <ComboBoxItem x:Name="ManGibson" FontSize="20">Gibson</ComboBoxItem>
+                            <ComboBoxItem x:Name="ManESP" FontSize="20">ESP</ComboBoxItem>
+                            <ComboBoxItem x:Name="ManMusicMan" FontSize="20">MusicMan</ComboBoxItem>
+                        </ComboBox>
+                        
+                        <TextBlock FontSize="20">Цена:</TextBlock>
+                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5">
+                            <ComboBoxItem x:Name="PriceZeroToTen" FontSize="20">0-10000</ComboBoxItem>
+                            <ComboBoxItem x:Name="PriceTenToTwenty" FontSize="20">10000-20000</ComboBoxItem>
+                            <ComboBoxItem x:Name="PriceTwentyToThirty" FontSize="20">20000-30000</ComboBoxItem>
+                            <ComboBoxItem x:Name="PriceMoreThirty" FontSize="20" Content=">30000"></ComboBoxItem>
+                        </ComboBox>
+                        <Button Height="40" Width="250" FontSize="20" Margin="5 50 5 5">Найти</Button>
+                    </StackPanel>
+                    
+                    <ListBox Grid.Column="1">
+                        <ListBoxItem>
+                                
+                        </ListBoxItem>
+                    </ListBox>
+                    
+                </Grid>
+            </TabItem>
+            <TabItem Header="Профиль">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <StackPanel Grid.Column="1">
+                        
+                    </StackPanel>
+                    
+                    <StackPanel>
+                        <Button Height="50" Width="300" Margin="5" FontSize="26">Заказы</Button>
+                        <Button Height="50" Width="300" Margin="5" FontSize="26">Изменить профиль</Button>
+                        <Button Height="50" Width="300" Margin="5" FontSize="26" Click="ExitOfAccount_Button">Выйти</Button>
+                        <Button Height="50" Width="300" Margin="5" FontSize="26">Удалить аккаунт</Button>
+                        <Button x:Name="RegNewUserForAdmin" Click="RegNewUser_Button" Height="50" Width="300" Margin="5" FontSize="26" Visibility="Visible">Создать пользователя</Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Склад" Visibility="Visible" x:Name="WareTabItem">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    
+                    <TextBox x:Name="SearchForWare" FontSize="20" Margin="5" Height="30" VerticalAlignment="Center"></TextBox>
+                    
+                    <Button Grid.Column="1" Margin="5" Height="30" Width="150" HorizontalAlignment="Center">Найти</Button>
+                    
+                    <DataGrid Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="False"
+                              Margin="0 10 0 0 " Name="WareDataGrid"
+                              FontSize="20">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Название" Binding="{Binding Path=Item}"/>
+                            <DataGridTextColumn Header="Описание" Binding="{Binding Path=Description}"/>
+                            <DataGridTextColumn Header="Количество" Binding="{Binding Path=Quantity}"/>
+                            <DataGridTextColumn Header="Категория" Binding="{Binding Path=Category}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    
+                    <Button Grid.Row="2" Margin="5" Height="50" Width="250" FontSize="20">Добавить</Button>
+                    <Button Grid.Column="1" Grid.Row="2" Margin="5" Height="50" Width="250" FontSize="20">Подробнее</Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Заказы" Visibility="Visible" x:Name="OrderTabItem">
+                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    
+                    <TextBox x:Name="SearchForOrders" FontSize="20" Margin="5" Height="30" VerticalAlignment="Center"></TextBox>
+                    
+                    <Button Grid.Column="1" Margin="5" Height="30" Width="150" HorizontalAlignment="Center">Найти</Button>
+                    
+                    <DataGrid Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="False"
+                              Margin="0 10 0 0 " Name="OrderDataGrid"
+                              FontSize="20">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Описание" Binding="{Binding Path=Description}"/>
+                            <DataGridTextColumn Header="Клиент" Binding="{Binding Path=User}"/>
+                            <DataGridTextColumn Header="Статус" Binding="{Binding Path=Status}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    
+                    <Button Grid.Row="2" Margin="5" Height="50" Width="250" FontSize="20">Добавить</Button>
+                    <Button Grid.Column="1" Grid.Row="2" Margin="5" Height="50" Width="250" FontSize="20">Подробнее</Button>
+                 </Grid>
+            </TabItem>
+            
+        </TabControl>
+    </Grid>
+</Window>
