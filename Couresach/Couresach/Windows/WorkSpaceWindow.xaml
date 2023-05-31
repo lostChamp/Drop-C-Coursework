@@ -14,39 +14,70 @@
                         <ColumnDefinition Width="0.6*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
                     <StackPanel>
-                        <TextBlock FontSize="20">Тип:</TextBlock>
-                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5">
+                        <TextBlock FontSize="20" Text="Товар/услуга"/>
+                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="WareOrServiceFilter">
+                            <ComboBoxItem FontSize="20">Товар</ComboBoxItem>
+                            <ComboBoxItem FontSize="20">Услуга</ComboBoxItem>
+                        </ComboBox>
+                        
+                        <TextBlock FontSize="20" Visibility="Hidden" x:Name="TypeText">Тип:</TextBlock>
+                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="TypeFilter" Visibility="Hidden">
                             <ComboBoxItem x:Name="TypeGuitar" FontSize="20">Гитары</ComboBoxItem>
                             <ComboBoxItem x:Name="TypeStrings" FontSize="20">Струны</ComboBoxItem>
                             <ComboBoxItem x:Name="TypePickup" FontSize="20">Звукосниматели</ComboBoxItem>
                             <ComboBoxItem x:Name="TypeOther" FontSize="20">Расходники</ComboBoxItem>
                         </ComboBox>
                         
-                        <TextBlock FontSize="20">Производитель:</TextBlock>
-                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5">
+                        <TextBlock FontSize="20" Visibility="Hidden" x:Name="ManText">Производитель:</TextBlock>
+                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="ManFilter" Visibility="Hidden">
                             <ComboBoxItem x:Name="ManFender" FontSize="20">Fender</ComboBoxItem>
                             <ComboBoxItem x:Name="ManGibson" FontSize="20">Gibson</ComboBoxItem>
                             <ComboBoxItem x:Name="ManESP" FontSize="20">ESP</ComboBoxItem>
                             <ComboBoxItem x:Name="ManMusicMan" FontSize="20">MusicMan</ComboBoxItem>
                         </ComboBox>
                         
-                        <TextBlock FontSize="20">Цена:</TextBlock>
-                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5">
+                        <TextBlock FontSize="20" Visibility="Hidden" x:Name="PriceText">Цена:</TextBlock>
+                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="PriceFilter" Visibility="Hidden">
                             <ComboBoxItem x:Name="PriceZeroToTen" FontSize="20">0-10000</ComboBoxItem>
                             <ComboBoxItem x:Name="PriceTenToTwenty" FontSize="20">10000-20000</ComboBoxItem>
                             <ComboBoxItem x:Name="PriceTwentyToThirty" FontSize="20">20000-30000</ComboBoxItem>
                             <ComboBoxItem x:Name="PriceMoreThirty" FontSize="20" Content=">30000"></ComboBoxItem>
                         </ComboBox>
-                        <Button Height="40" Width="250" FontSize="20" Margin="5 50 5 5">Найти</Button>
+                        <Button Height="40" Width="250" FontSize="20" Margin="5 50 5 5" Click="SerachProducts_Button">Найти</Button>
                     </StackPanel>
-                    
-                    <ListBox Grid.Column="1">
-                        <ListBoxItem>
-                                
-                        </ListBoxItem>
-                    </ListBox>
-                    
+                    <ListBox Grid.Column="1" x:Name="ServiceListBoxForProduct" Visibility="Hidden">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Название услуги:"/>
+                                        <TextBlock Height="20" FontSize="16" Text="{Binding Path=Name}"/>
+                                        <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Описание услуги:"/>
+                                        <TextBlock Height="20" FontSize="16" Text="{Binding Path=Description}"/>
+                                        <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Цена:"/>
+                                        <TextBlock Height="20" FontSize="16" Text="{Binding Path=Price}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        
+                        <ListBox Grid.Column="1" x:Name="WareListBoxForProduct" Visibility="Hidden">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Название товара:"/>
+                                        <TextBlock Height="20" FontSize="16" Text="{Binding Path=Item}"/>
+                                        <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Описание товара:"/>
+                                        <TextBlock Height="20" FontSize="16" Text="{Binding Path=Description}"/>
+                                        <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Цена товара:"/>
+                                        <TextBlock Height="20" FontSize="16" Text="{Binding Path=Price}"/>
+                                        <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Картинка:"/>
+                                        <Image Source="{Binding Path=Image}" Height="100" Width="100"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
                 </Grid>
             </TabItem>
             <TabItem Header="Профиль">
@@ -111,8 +142,31 @@
                             </Grid>
                         </StackPanel>
                     </ScrollViewer>
+                    
+                    <ScrollViewer Grid.Column="1" Visibility="Hidden" x:Name="ScrollViewerOrders">
+                        <StackPanel Visibility="Hidden" x:Name="OrdersProfile">
+                            <Button Click="Back_Button">Назад</Button>
+                            <ListBox x:Name="OrdersListBox" Visibility="Hidden">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Описание заказа:"/>
+                                                <TextBlock Height="20" FontSize="16" Text="{Binding Path=Description}"/>
+                                                <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Статус"/>
+                                                <TextBlock Height="20" FontSize="16" Text="{Binding Path=Status}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                            </ListBox>
+                            <TextBlock Text="У вас пока нет заказов!" Visibility="Hidden" x:Name="OrdersNotFound"
+                                       FontSize="20" FontWeight="SemiBold"/>
+                            <!-- <TextBox x:Name="Description"></TextBox> -->
+                            <!-- <Button Click="NewOrder_Button">Заказать</Button> -->
+                        </StackPanel>
+                    </ScrollViewer>
+                    
                     <StackPanel Grid.Column="0">
-                        <Button Height="50" Width="300" Margin="5" FontSize="26">Заказы</Button>
+                        <Button Height="50" Width="300" Margin="5" FontSize="26" Click="GetAllOrdersProfile_Button">Заказы</Button>
                         <Button Height="50" Width="300" Margin="5" FontSize="26" Click="EditProfile_Button">Изменить профиль</Button>
                         <Button Height="50" Width="300" Margin="5" FontSize="26" Click="ExitOfAccount_Button">Выйти</Button>
                         <Button Height="50" Width="300" Margin="5" FontSize="26" Click="DeleteAccount_Button">Удалить аккаунт</Button>
@@ -192,7 +246,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
                             <DataGridTextColumn Header="Описание" Binding="{Binding Path=Description}"/>
-                            <DataGridTextColumn Header="Клиент" Binding="{Binding Path=User}"/>
+                            <DataGridTextColumn Header="Клиент" Binding="{Binding Path=UsersEntity.Full_name}"/>
                             <DataGridTextColumn Header="Статус" Binding="{Binding Path=Status}"/>
                         </DataGrid.Columns>
                     </DataGrid>

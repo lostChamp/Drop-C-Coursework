@@ -78,4 +78,45 @@ public class DatabaseControl
             return role;
         }
     }
+
+    public static void CreateOrder(Order order)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            ctx.Order?.Add(order);
+            ctx.SaveChanges();
+        }
+    }
+
+    public static List<Order> GetAllOrders()
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Order?.Include(p => p.UsersEntity).ToList();
+        }
+    }
+
+    public static List<Order> GetAllOrdersByUserId(int id)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Order?.Where(p => p.User_id == id).ToList();
+        }
+    }
+
+    public static List<Service> GetAllServices()
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Service?.ToList();
+        }
+    }
+
+    public static List<Ware> GetAllWare()
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Ware?.ToList();
+        }
+    }
 }

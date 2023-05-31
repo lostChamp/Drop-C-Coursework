@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using Couresach.Windows;
 
@@ -25,6 +26,9 @@ public partial class WorkSpaceWindow : Window
         FIO.Text = user.Full_name;
         Phone_number.Text = user.Phone_number;
         Email.Text = user.Email;
+
+        WareDataGrid.ItemsSource = DatabaseControl.GetAllWare();
+        OrderDataGrid.ItemsSource = DatabaseControl.GetAllOrders();
     }
 
     private void ExitOfAccount_Button(object sender, RoutedEventArgs e)
@@ -90,6 +94,75 @@ public partial class WorkSpaceWindow : Window
         else
         {
             EmailEx.Visibility = Visibility.Visible;
+        }
+    }
+
+    private void GetAllOrdersProfile_Button(object sender, RoutedEventArgs e)
+    {
+        List<Order> orders = DatabaseControl.GetAllOrdersByUserId(user.Id);
+        if (orders.Count != 0)
+        {
+            OrdersListBox.ItemsSource = DatabaseControl.GetAllOrdersByUserId(user.Id);
+            ScrollViewerOrders.Visibility = Visibility.Visible;
+            OrdersProfile.Visibility = Visibility.Visible;
+            OrdersListBox.Visibility = Visibility.Visible;
+            InfoProfile.Visibility = Visibility.Hidden;
+        }
+        else
+        {
+            ScrollViewerOrders.Visibility = Visibility.Visible;
+            OrdersNotFound.Visibility = Visibility.Visible;
+            OrdersProfile.Visibility = Visibility.Visible;
+            InfoProfile.Visibility = Visibility.Hidden;
+        }
+        
+    }
+
+    private void Back_Button(object sender, RoutedEventArgs e)
+    {
+        InfoProfile.Visibility = Visibility.Visible;
+        ScrollViewerOrders.Visibility = Visibility.Hidden;
+        OrdersNotFound.Visibility = Visibility.Hidden;
+    }
+
+    // private void NewOrder_Button(object sender, RoutedEventArgs e)
+    // {
+    //     DatabaseControl.CreateOrder(new Order()
+    //     {
+    //         User_id = user.Id,
+    //         Description = Description.Text
+    //     });
+    // }
+    private void SerachProducts_Button(object sender, RoutedEventArgs e)
+    {
+        if (WareOrServiceFilter.Text == "Услуга")
+        {
+            ServiceListBoxForProduct.Visibility = Visibility.Visible;
+            ServiceListBoxForProduct.ItemsSource = DatabaseControl.GetAllServices();
+            
+            TypeText.Visibility = Visibility.Hidden;
+            TypeFilter.Visibility = Visibility.Hidden;
+            
+            ManText.Visibility = Visibility.Hidden;
+            ManFilter.Visibility = Visibility.Hidden;
+            
+            PriceText.Visibility = Visibility.Hidden;
+            PriceFilter.Visibility = Visibility.Hidden;
+            WareListBoxForProduct.Visibility = Visibility.Hidden;
+        }
+        else
+        {
+            TypeText.Visibility = Visibility.Visible;
+            TypeFilter.Visibility = Visibility.Visible;
+            
+            ManText.Visibility = Visibility.Visible;
+            ManFilter.Visibility = Visibility.Visible;
+            
+            PriceText.Visibility = Visibility.Visible;
+            PriceFilter.Visibility = Visibility.Visible;
+
+            WareListBoxForProduct.ItemsSource = DatabaseControl.GetAllWare();
+            WareListBoxForProduct.Visibility = Visibility.Visible;
         }
     }
 }

@@ -6,6 +6,12 @@ public class DbAppContext : DbContext
 {
     public DbSet<User>? User { get; set; }
     public DbSet<Role>? Role { get; set; }
+    
+    public DbSet<Order>? Order { get; set; }
+    
+    public DbSet<Ware>? Ware { get; set; }
+    
+    public DbSet<Service>? Service { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -18,5 +24,7 @@ public class DbAppContext : DbContext
     {
         modelBuilder.Entity<User>().HasOne(p => p.RolesEntity)
             .WithMany(p => p.UsersEntity);
+        modelBuilder.Entity<Order>().HasOne(p => p.UsersEntity)
+            .WithMany(p => p.OrderEntity);
     }
 }
