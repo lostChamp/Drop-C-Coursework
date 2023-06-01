@@ -1,0 +1,14 @@
+﻿<Window x:Class="Couresach.Windows.AcceptOrderProducts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Couresach.Windows"
+        mc:Ignorable="d"
+        Title="Подтвердите заказ" Height="250" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">Неверный логин/пароль</TextBlock>
+        <Button Height="30" Width="100" Margin="0 150 150 0">Заказать!</Button>
+        <Button Height="30" Width="100" Margin="150 150 0 0" Click="CancelOrder_Button">Отмена</Button>
+    </Grid>
+</Window>

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\ProjectDefaultFiles\App.xaml
-51701487445
+8931974452
 
-14-72724467
+17993231629
 212909912682
-Windows\AuthorizationGuard.xaml;Windows\AuthWindow.xaml;Windows\RegistrationForAdminWindow.xaml;Windows\RegistrationWindow.xaml;Windows\WorkSpaceWindow.xaml;
+Windows\AcceptOrderProducts.xaml;Windows\AddNewWareItemWindow.xaml;Windows\AuthorizationGuard.xaml;Windows\AuthWindow.xaml;Windows\MoreInfoWareItemWindow.xaml;Windows\RegistrationForAdminWindow.xaml;Windows\RegistrationWindow.xaml;Windows\WorkSpaceWindow.xaml;
 
 False
 

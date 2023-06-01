@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
@@ -112,11 +113,68 @@ public class DatabaseControl
         }
     }
 
+    public static List<Ware> GetAllForProductsWare()
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Ware?.Where(p => p.Quantity>0).ToList();
+        }
+    }
     public static List<Ware> GetAllWare()
     {
         using (DbAppContext ctx = new DbAppContext())
         {
             return ctx.Ware?.ToList();
+        }
+    }
+
+    public static List<Ware> GetWareByItem(string item)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Ware?.Where(p => EF.Functions.Like(p.Item, $"%{item}%")).ToList();
+        }
+    }
+
+    public static List<Ware> GetUniqueValues()
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Ware?.Distinct().ToList();
+        }
+    }
+
+    public static List<Ware> GetWareByCategory(string category)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Ware?.Where(p => p.Category == category).ToList();
+        }
+    }
+    
+    public static List<Order> GetOrderByUserName(string full_name)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Order?.Include(p => p.UsersEntity).Where(p => EF.Functions.Like(p.UsersEntity.Full_name, $"%{full_name}%")).ToList();
+        }
+    }
+
+    public static void DeleteWareItem(Ware item)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            ctx.Ware?.Remove(item);
+            ctx.SaveChanges();
+        }
+    }
+
+    public static void DeleteOrderItem(Order item)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            ctx.Order?.Remove(item);
+            ctx.SaveChanges();
         }
     }
 }

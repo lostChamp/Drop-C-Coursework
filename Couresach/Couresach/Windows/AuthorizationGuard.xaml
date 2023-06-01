@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Couresach.Windows"
         mc:Ignorable="d"
-        Title="AuthorizationGuard" Height="250" Width="400" ResizeMode="NoResize">
+        Title="Ошибка!" Height="250" Width="400" ResizeMode="NoResize">
     <Grid>
         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">Неверный логин/пароль</TextBlock>
         <Button Height="30" Width="100" Margin="0 150 0 0" Click="Close_GuardWindow">Закрыть</Button>

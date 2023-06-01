@@ -86,3 +86,9 @@ C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\n
 C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\Couresach.pdb
 C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\Couresach.genruntimeconfig.cache
 C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\ref\Couresach.dll
+C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\Windows\AcceptOrderProducts.g.cs
+C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\Windows\AcceptOrderProducts.baml
+C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\Windows\AddNewWareItemWindow.g.cs
+C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\Windows\AddNewWareItemWindow.baml
+C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\Windows\MoreInfoWareItemWindow.g.cs
+C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\Windows\MoreInfoWareItemWindow.baml

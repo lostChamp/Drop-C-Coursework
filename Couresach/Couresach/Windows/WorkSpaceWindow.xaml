@@ -17,25 +17,33 @@
                     
                     <StackPanel>
                         <TextBlock FontSize="20" Text="Товар/услуга"/>
-                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="WareOrServiceFilter">
-                            <ComboBoxItem FontSize="20">Товар</ComboBoxItem>
-                            <ComboBoxItem FontSize="20">Услуга</ComboBoxItem>
-                        </ComboBox>
+                        <RadioButton FontSize="20" Click="SelectProducts_Item">Товар</RadioButton>
+                        <RadioButton FontSize="20" Click="SelectServices_Item">Услуга</RadioButton>
+                        <!-- <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="WareOrServiceFilter"> -->
+                        <!--     <ComboBoxItem FontSize="20" Selected="SelectProducts_Item">Товар</ComboBoxItem> -->
+                        <!--     <ComboBoxItem FontSize="20" Selected="SelectServices_Item">Услуга</ComboBoxItem> -->
+                        <!-- </ComboBox> -->
                         
                         <TextBlock FontSize="20" Visibility="Hidden" x:Name="TypeText">Тип:</TextBlock>
-                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="TypeFilter" Visibility="Hidden">
-                            <ComboBoxItem x:Name="TypeGuitar" FontSize="20">Гитары</ComboBoxItem>
-                            <ComboBoxItem x:Name="TypeStrings" FontSize="20">Струны</ComboBoxItem>
-                            <ComboBoxItem x:Name="TypePickup" FontSize="20">Звукосниматели</ComboBoxItem>
-                            <ComboBoxItem x:Name="TypeOther" FontSize="20">Расходники</ComboBoxItem>
+                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="TypeFilter" Visibility="Hidden" SelectedValuePath="Category" SelectionChanged="SelectType_Item">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Category}"></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                            <!-- <ComboBoxItem x:Name="TypeGuitar" FontSize="20">Гитары</ComboBoxItem> -->
+                            <!-- <ComboBoxItem x:Name="TypeStrings" FontSize="20">Струны</ComboBoxItem> -->
+                            <!-- <ComboBoxItem x:Name="TypePickup" FontSize="20">Звукосниматели</ComboBoxItem> -->
+                            <!-- <ComboBoxItem x:Name="TypeOther" FontSize="20">Расходники</ComboBoxItem> -->
                         </ComboBox>
-                        
+                        <TextBlock x:Name="dada"/>
                         <TextBlock FontSize="20" Visibility="Hidden" x:Name="ManText">Производитель:</TextBlock>
-                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="ManFilter" Visibility="Hidden">
-                            <ComboBoxItem x:Name="ManFender" FontSize="20">Fender</ComboBoxItem>
-                            <ComboBoxItem x:Name="ManGibson" FontSize="20">Gibson</ComboBoxItem>
-                            <ComboBoxItem x:Name="ManESP" FontSize="20">ESP</ComboBoxItem>
-                            <ComboBoxItem x:Name="ManMusicMan" FontSize="20">MusicMan</ComboBoxItem>
+                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="ManFilter" Visibility="Hidden" SelectedValuePath="Manufacturer">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Manufacturer}"></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
                         </ComboBox>
                         
                         <TextBlock FontSize="20" Visibility="Hidden" x:Name="PriceText">Цена:</TextBlock>
@@ -45,7 +53,6 @@
                             <ComboBoxItem x:Name="PriceTwentyToThirty" FontSize="20">20000-30000</ComboBoxItem>
                             <ComboBoxItem x:Name="PriceMoreThirty" FontSize="20" Content=">30000"></ComboBoxItem>
                         </ComboBox>
-                        <Button Height="40" Width="250" FontSize="20" Margin="5 50 5 5" Click="SerachProducts_Button">Найти</Button>
                     </StackPanel>
                     <ListBox Grid.Column="1" x:Name="ServiceListBoxForProduct" Visibility="Hidden">
                             <ListBox.ItemTemplate>
@@ -186,20 +193,18 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     
-                    
-                    <TextBox x:Name="SearchForWare" FontSize="20" Margin="5" Height="30" VerticalAlignment="Center"></TextBox>
-                    
-                    <Button Grid.Column="1" Margin="5" Height="30" Width="150" HorizontalAlignment="Center">Найти</Button>
+                    <TextBlock Margin="5 7 5 5 " FontSize="20">Поиск по названию:</TextBlock>
+                    <TextBox Grid.ColumnSpan="2" x:Name="SearchForWare" FontSize="20" Margin="200 5 5 5 " Height="30" VerticalAlignment="Center" KeyUp="SearchForWareByItem_Button"></TextBox>
                     
                     <DataGrid Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="False"
                               Margin="0 10 0 0 " Name="WareDataGrid"
-                              FontSize="20">
+                              FontSize="20" ColumnWidth="*" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel>
-                                            
+                                            <Button  Click="DeleteSelectedWareItemInDataGrid_Button">[X]</Button>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -211,8 +216,8 @@
                         </DataGrid.Columns>
                     </DataGrid>
                     
-                    <Button Grid.Row="2" Margin="5" Height="50" Width="250" FontSize="20">Добавить</Button>
-                    <Button Grid.Column="1" Grid.Row="2" Margin="5" Height="50" Width="250" FontSize="20">Подробнее</Button>
+                    <Button Grid.Row="2" Margin="5" Height="50" Width="250" FontSize="20" Click="AddNewWareItem_Button">Добавить</Button>
+                    <Button Grid.Column="1" Grid.Row="2" Margin="5" Height="50" Width="250" FontSize="20" Click="MoreInfoWareItem_Button">Подробнее</Button>
                 </Grid>
             </TabItem>
             <TabItem Header="Заказы" Visibility="Visible" x:Name="OrderTabItem">
@@ -228,19 +233,18 @@
                     </Grid.ColumnDefinitions>
                     
                     
-                    <TextBox x:Name="SearchForOrders" FontSize="20" Margin="5" Height="30" VerticalAlignment="Center"></TextBox>
-                    
-                    <Button Grid.Column="1" Margin="5" Height="30" Width="150" HorizontalAlignment="Center">Найти</Button>
-                    
+                     <TextBlock Margin="5 7 5 5 " FontSize="20">Поиск по клиенту:</TextBlock>
+                     <TextBox Grid.ColumnSpan="2" x:Name="SearchForOrders" FontSize="20" Margin="200 5 5 5 "
+                              Height="30" VerticalAlignment="Center" KeyUp="SearchForOrdersBFullName_Button"/>
                     <DataGrid Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="False"
                               Margin="0 10 0 0 " Name="OrderDataGrid"
-                              FontSize="20">
+                              FontSize="20" ColumnWidth="*" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel>
-                                            
+                                            <Button Click="DeleteSelectedOrderInDataGrid_Button">[X]</Button>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -250,9 +254,8 @@
                             <DataGridTextColumn Header="Статус" Binding="{Binding Path=Status}"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    
-                    <Button Grid.Row="2" Margin="5" Height="50" Width="250" FontSize="20">Добавить</Button>
-                    <Button Grid.Column="1" Grid.Row="2" Margin="5" Height="50" Width="250" FontSize="20">Подробнее</Button>
+                     
+                    <Button Grid.ColumnSpan="2" Grid.Row="2" Margin="5" Height="50" Width="250" FontSize="20">Подробнее</Button>
                  </Grid>
             </TabItem>
             
