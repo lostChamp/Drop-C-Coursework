@@ -7,6 +7,8 @@ namespace Couresach;
 
 public class DatabaseControl
 {
+    
+    //User
     public static void RegistrationUser(User user)
     {
         using (DbAppContext ctx = new DbAppContext())
@@ -54,6 +56,7 @@ public class DatabaseControl
         }
     }
 
+    //Role
     public static Role? GetRoleByValue(string value)
     {
         using (DbAppContext ctx = new DbAppContext())
@@ -80,6 +83,7 @@ public class DatabaseControl
         }
     }
 
+    //Order
     public static void CreateOrder(Order order)
     {
         using (DbAppContext ctx = new DbAppContext())
@@ -105,6 +109,7 @@ public class DatabaseControl
         }
     }
 
+    //Service
     public static List<Service> GetAllServices()
     {
         using (DbAppContext ctx = new DbAppContext())
@@ -113,6 +118,7 @@ public class DatabaseControl
         }
     }
 
+    //Ware
     public static List<Ware> GetAllForProductsWare()
     {
         using (DbAppContext ctx = new DbAppContext())
@@ -124,18 +130,27 @@ public class DatabaseControl
     {
         using (DbAppContext ctx = new DbAppContext())
         {
-            return ctx.Ware?.ToList();
+            return ctx.Ware?.Include(p => p.CategoryEntity).ToList();
         }
     }
-
+    
+    public static void CreateNewWareItem(Ware item)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            ctx.Ware?.Add(item);
+            ctx.SaveChanges();
+        }
+    }
+    
     public static List<Ware> GetWareByItem(string item)
     {
         using (DbAppContext ctx = new DbAppContext())
         {
-            return ctx.Ware?.Where(p => EF.Functions.Like(p.Item, $"%{item}%")).ToList();
+            return ctx.Ware?.Include(p => p.CategoryEntity).Where(p => EF.Functions.Like(p.Item, $"%{item}%")).ToList();
         }
     }
-
+    
     public static List<Ware> GetUniqueValues()
     {
         using (DbAppContext ctx = new DbAppContext())
@@ -143,29 +158,56 @@ public class DatabaseControl
             return ctx.Ware?.Distinct().ToList();
         }
     }
-
-    public static List<Ware> GetWareByCategory(string category)
-    {
-        using (DbAppContext ctx = new DbAppContext())
-        {
-            return ctx.Ware?.Where(p => p.Category == category).ToList();
-        }
-    }
     
-    public static List<Order> GetOrderByUserName(string full_name)
-    {
-        using (DbAppContext ctx = new DbAppContext())
-        {
-            return ctx.Order?.Include(p => p.UsersEntity).Where(p => EF.Functions.Like(p.UsersEntity.Full_name, $"%{full_name}%")).ToList();
-        }
-    }
-
     public static void DeleteWareItem(Ware item)
     {
         using (DbAppContext ctx = new DbAppContext())
         {
             ctx.Ware?.Remove(item);
             ctx.SaveChanges();
+        }
+    }
+
+    //Category
+    public static Category GetCategoryByName(string name)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Category?.Where(p => p.Name == name).FirstOrDefault();
+        }
+    }
+    
+    public static List<Category> GetAllCategories()
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Category?.ToList();
+        }
+    }
+    
+    //Manufacturer
+    public static Manufacturer GetManByName(string name)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Manufacturer?.Where(p => p.Name == name).FirstOrDefault();
+        }
+    }
+    
+    public static List<Manufacturer> GetAllMans()
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Manufacturer?.ToList();
+        }
+    }
+    
+    //Order
+    public static List<Order> GetOrderByUserName(string full_name)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Order?.Include(p => p.UsersEntity).Where(p => EF.Functions.Like(p.UsersEntity.Full_name, $"%{full_name}%")).ToList();
         }
     }
 

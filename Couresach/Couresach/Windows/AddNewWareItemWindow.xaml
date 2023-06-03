@@ -15,6 +15,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         
         <TextBlock Grid.Row="0" FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Добавление</TextBlock>
@@ -35,24 +36,37 @@
         </StackPanel>
         
         <StackPanel Grid.Row="4">
-            <TextBlock FontSize="16" Margin="5">Категория:</TextBlock>
-            <ComboBox Height="20" FontSize="14" Margin="5 0" x:Name="CategoryComboBox">
-                
-            </ComboBox>
+            <TextBlock FontSize="16" Margin="5">Количество:</TextBlock>
+            <TextBox FontSize="16" Height="20" Margin="5 0" x:Name="ItemQuantity"/>
         </StackPanel>
         
         <StackPanel Grid.Row="5">
-            <TextBlock FontSize="16" Margin="5">Цена:</TextBlock>
-            <TextBox Height="20" FontSize="16" Margin="5 0" x:Name="ItemPrice"/>
+            <TextBlock FontSize="16" Margin="5">Категория:</TextBlock>
+            <ComboBox Height="20" FontSize="14" Margin="5 0" x:Name="CategoryComboBox" SelectedValuePath="Name">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
         </StackPanel>
         
         <StackPanel Grid.Row="6">
             <TextBlock FontSize="16" Margin="5">Цена:</TextBlock>
-            <ComboBox Height="20" FontSize="14" Margin="5 0" x:Name="ItemMan">
-                
+            <TextBox Height="20" FontSize="16" Margin="5 0" x:Name="ItemPrice"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="7">
+            <TextBlock FontSize="16" Margin="5">Производитель:</TextBlock>
+            <ComboBox Height="20" FontSize="14" Margin="5 0" x:Name="ManComboBox" SelectedValuePath="Name">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
             </ComboBox>
         </StackPanel>
         
-        <Button Grid.Row="7" Height="30" Width="150">Добавить</Button>
+        <Button Grid.Row="8" Height="30" Width="150" Click="CreateNewWareItem_Button">Добавить</Button>
     </Grid>
 </Window>

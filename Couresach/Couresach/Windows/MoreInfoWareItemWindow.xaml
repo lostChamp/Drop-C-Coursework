@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Couresach.Windows"
         mc:Ignorable="d"
-        Title="MoreInfoWareItemWindow" Height="600" Width="800">
+        Title="Подробнее" Height="600" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -23,7 +23,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
-        <TextBlock Grid.ColumnSpan="2" Grid.Row="0" FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Добавление</TextBlock>
+        <TextBlock Grid.ColumnSpan="2" Grid.Row="0" FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Подробнее</TextBlock>
         
         <StackPanel Grid.Row="1">
             <TextBlock FontSize="16" Margin="5">Название товара:</TextBlock>
@@ -32,7 +32,7 @@
         
         <StackPanel Grid.Row="2">
             <TextBlock FontSize="16" Margin="5">Изображение:</TextBlock>
-            <Button Height="20" FontSize="14" Margin="5 0" x:Name="ItemImage">Изменить</Button>
+            <Button Height="20" FontSize="14" Margin="5 0">Изменить</Button>
         </StackPanel>
         
         <StackPanel Grid.Row="3">
@@ -42,8 +42,12 @@
         
         <StackPanel Grid.Row="4">
             <TextBlock FontSize="16" Margin="5">Категория:</TextBlock>
-            <ComboBox Height="20" FontSize="14" Margin="5 0" x:Name="CategoryComboBox">
-                
+            <ComboBox Height="20" FontSize="14" Margin="5 0" x:Name="CategoryComboBox" SelectedValuePath="Name">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
             </ComboBox>
         </StackPanel>
         
@@ -54,12 +58,16 @@
         
         <StackPanel Grid.Row="6">
             <TextBlock FontSize="16" Margin="5">Производитель:</TextBlock>
-            <ComboBox Height="20" FontSize="14" Margin="5 0" x:Name="ItemMan">
-                
+            <ComboBox Height="20" FontSize="14" Margin="5 0" x:Name="ManComboBox" SelectedValuePath="Name">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
             </ComboBox>
         </StackPanel>
         
-        <Image Grid.Column="1" Grid.RowSpan="8" Source="../Images/monkeyUser.jpg" Margin="5"></Image>
+        <Image Grid.Column="1" Grid.RowSpan="8" Source="../Images/monkeyUser.jpg" Margin="5" x:Name="ItemImage"></Image>
         <Button Grid.Row="7" Height="30" Width="150" Grid.ColumnSpan="2">Изменить</Button>
     </Grid>
 </Window>

@@ -25,10 +25,10 @@
                         <!-- </ComboBox> -->
                         
                         <TextBlock FontSize="20" Visibility="Hidden" x:Name="TypeText">Тип:</TextBlock>
-                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="TypeFilter" Visibility="Hidden" SelectedValuePath="Category" SelectionChanged="SelectType_Item">
+                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="TypeFilter" Visibility="Hidden" SelectedValuePath="Name" SelectionChanged="SelectType_Item">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Path=Category}"></TextBlock>
+                                    <TextBlock Text="{Binding Path=Name}"></TextBlock>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                             <!-- <ComboBoxItem x:Name="TypeGuitar" FontSize="20">Гитары</ComboBoxItem> -->
@@ -38,10 +38,10 @@
                         </ComboBox>
                         <TextBlock x:Name="dada"/>
                         <TextBlock FontSize="20" Visibility="Hidden" x:Name="ManText">Производитель:</TextBlock>
-                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="ManFilter" Visibility="Hidden" SelectedValuePath="Manufacturer">
+                        <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="ManFilter" Visibility="Hidden" SelectedValuePath="Name">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Path=Manufacturer}"></TextBlock>
+                                    <TextBlock Text="{Binding Path=Name}"></TextBlock>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
@@ -212,7 +212,7 @@
                             <DataGridTextColumn Header="Название" Binding="{Binding Path=Item}"/>
                             <DataGridTextColumn Header="Описание" Binding="{Binding Path=Description}"/>
                             <DataGridTextColumn Header="Количество" Binding="{Binding Path=Quantity}"/>
-                            <DataGridTextColumn Header="Категория" Binding="{Binding Path=Category}"/>
+                            <DataGridTextColumn Header="Категория" Binding="{Binding Path=CategoryEntity.Name}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                     

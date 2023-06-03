@@ -151,9 +151,10 @@ public partial class WorkSpaceWindow : Window
 
         ware = DatabaseControl.GetAllForProductsWare();
         WareListBoxForProduct.ItemsSource = ware;
-        List<Ware> categoriesAndMan = DatabaseControl.GetUniqueValues();
-        TypeFilter.ItemsSource = categoriesAndMan;
-        ManFilter.ItemsSource = categoriesAndMan;
+        List<Category> categories = DatabaseControl.GetAllCategories();
+        List<Manufacturer> mans = DatabaseControl.GetAllMans();
+        TypeFilter.ItemsSource = categories;
+        ManFilter.ItemsSource = mans;
         WareListBoxForProduct.Visibility = Visibility.Visible;
     }
 
@@ -177,8 +178,8 @@ public partial class WorkSpaceWindow : Window
     {
         if (TypeFilter.SelectedValue != null)
         {
-            ware = DatabaseControl.GetWareByCategory(TypeFilter.SelectedValue.ToString());
-            WareListBoxForProduct.ItemsSource = ware;
+            
+            // WareListBoxForProduct.ItemsSource = categories;
         }
     }
 
@@ -220,8 +221,12 @@ public partial class WorkSpaceWindow : Window
 
     private void MoreInfoWareItem_Button(object sender, RoutedEventArgs e)
     {
-        Window MoreInfoWareItemWindow = new MoreInfoWareItemWindow();
-        MoreInfoWareItemWindow.Show();
+        Ware item = WareDataGrid.SelectedItem as Ware;
+        if (item != null)
+        {
+            Window MoreInfoWareItemWindow = new MoreInfoWareItemWindow(item);
+            MoreInfoWareItemWindow.Show();
+        }
     }
 
     private void DeleteSelectedWareItemInDataGrid_Button(object sender, RoutedEventArgs e)

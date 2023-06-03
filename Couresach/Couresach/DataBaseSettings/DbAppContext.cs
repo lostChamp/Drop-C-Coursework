@@ -12,6 +12,9 @@ public class DbAppContext : DbContext
     public DbSet<Ware>? Ware { get; set; }
     
     public DbSet<Service>? Service { get; set; }
+    
+    public DbSet<Category>? Category { get; set; }
+    public DbSet<Manufacturer>? Manufacturer { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -26,5 +29,9 @@ public class DbAppContext : DbContext
             .WithMany(p => p.UsersEntity);
         modelBuilder.Entity<Order>().HasOne(p => p.UsersEntity)
             .WithMany(p => p.OrderEntity);
+        modelBuilder.Entity<Ware>().HasOne(p => p.CategoryEntity)
+            .WithMany(p => p.WareEntity);
+        modelBuilder.Entity<Ware>().HasOne(p => p.ManufacturerEntity)
+            .WithMany(p => p.WareEntity);
     }
 }
