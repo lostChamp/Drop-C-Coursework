@@ -193,6 +193,7 @@ public partial class WorkSpaceWindow : Window
     {
         Window AddNewWareItemWindow = new AddNewWareItemWindow();
         AddNewWareItemWindow.Show();
+        WareDataGrid.ItemsSource = DatabaseControl.GetAllWare();
     }
 
     private void SearchForWareByItem_Button(object sender, RoutedEventArgs e)
@@ -227,6 +228,7 @@ public partial class WorkSpaceWindow : Window
             Window MoreInfoWareItemWindow = new MoreInfoWareItemWindow(item);
             MoreInfoWareItemWindow.Show();
         }
+        WareDataGrid.ItemsSource = DatabaseControl.GetAllWare();
     }
 
     private void DeleteSelectedWareItemInDataGrid_Button(object sender, RoutedEventArgs e)

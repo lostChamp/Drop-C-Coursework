@@ -1,9 +1,16 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Net;
+using System.Windows;
+using Microsoft.Win32;
 
 namespace Couresach.Windows;
 
 public partial class AddNewWareItemWindow : Window
 {
+    private const string _imageSource = 
+        "C:\\Users\\Константин\\Desktop\\Coursework\\Couresach\\Couresach\\Images";
+
+    private OpenFileDialog _img;
     public AddNewWareItemWindow()
     {
         InitializeComponent();
@@ -13,10 +20,12 @@ public partial class AddNewWareItemWindow : Window
 
     private void CreateNewWareItem_Button(object sender, RoutedEventArgs e)
     {
+        string filePath = System.IO.Path.Combine(_imageSource, _img.SafeFileName);
+        File.Copy(_img.FileName, filePath, true);
         DatabaseControl.CreateNewWareItem(new Ware
         {
             Item = ItemName.Text,
-            Image = null,
+            Image = filePath,
             Description = ItemDescription.Text,
             Quantity = int.Parse(ItemQuantity.Text),
             Category_id = DatabaseControl.GetCategoryByName(CategoryComboBox.SelectedValue.ToString()).Id,
@@ -24,5 +33,16 @@ public partial class AddNewWareItemWindow : Window
             Manufacturer_id = DatabaseControl.GetManByName(ManComboBox.SelectedValue.ToString()).Id,
         });
         Close();
+    }
+
+    private void AddImage_Button(object sender, RoutedEventArgs e)
+    {
+        OpenFileDialog openFileDialog = new OpenFileDialog();
+        openFileDialog.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
+        if (openFileDialog.ShowDialog() == true)
+        {
+            _img = openFileDialog;
+        }
+        
     }
 }

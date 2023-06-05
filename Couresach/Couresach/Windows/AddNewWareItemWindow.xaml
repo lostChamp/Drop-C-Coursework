@@ -27,7 +27,7 @@
         
         <StackPanel Grid.Row="2">
             <TextBlock FontSize="16" Margin="5">Изображение:</TextBlock>
-            <Button Height="20" FontSize="14" Margin="5 0" x:Name="ItemImage">Добавить</Button>
+            <Button Height="20" FontSize="14" Margin="5 0" x:Name="ItemImage" Click="AddImage_Button">Добавить</Button>
         </StackPanel>
         
         <StackPanel Grid.Row="3">
