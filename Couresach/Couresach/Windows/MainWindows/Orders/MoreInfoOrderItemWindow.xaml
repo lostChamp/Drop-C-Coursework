@@ -1,0 +1,37 @@
+﻿<Window x:Class="Couresach.Windows.MainWindows.Orders.MoreInfoOrderItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Couresach.Windows.MainWindows.Orders"
+        mc:Ignorable="d"
+        Title="MoreInfoOrderItemWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Подробнее"/>
+        
+        <StackPanel Grid.Row="1">
+            <TextBlock Margin="5" FontSize="20" FontWeight="SemiBold">ФИО заказчика:</TextBlock>
+            <TextBlock Margin="5" FontSize="20" x:Name="FIOUser"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2">
+            <TextBlock FontSize="20" FontWeight="SemiBold">Описание заказа</TextBlock>
+            <TextBlock Margin="5" FontSize="20" x:Name="OrderDescription"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="3">
+            <TextBlock FontSize="20" FontWeight="SemiBold">Статус заказа:</TextBlock>
+            <TextBox Margin="5" FontSize="20" x:Name="OrderStatus"/>
+        </StackPanel>
+        
+        <Button Grid.Row="4" Height="30" Width="150" Click="EditOrderStatus_Button">Изменить</Button>
+    </Grid>
+</Window>

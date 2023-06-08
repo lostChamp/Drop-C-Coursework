@@ -29,9 +29,15 @@ public class DbAppContext : DbContext
             .WithMany(p => p.UsersEntity);
         modelBuilder.Entity<Order>().HasOne(p => p.UsersEntity)
             .WithMany(p => p.OrderEntity);
+        modelBuilder.Entity<Order>().HasOne(p => p.WareEntity)
+            .WithMany(p => p.OrderEntity);
+        modelBuilder.Entity<Order>().HasOne(p => p.ServiceEntity)
+            .WithMany(p => p.OrderEntity);
         modelBuilder.Entity<Ware>().HasOne(p => p.CategoryEntity)
             .WithMany(p => p.WareEntity);
         modelBuilder.Entity<Ware>().HasOne(p => p.ManufacturerEntity)
             .WithMany(p => p.WareEntity);
+        modelBuilder.Entity<Ware>().Property(p => p.Image).IsRequired(true)
+            .HasDefaultValueSql("C:\\Users\\Константин\\Desktop\\Coursework\\Couresach\\Couresach\\Images\\no_img.jpg");
     }
 }

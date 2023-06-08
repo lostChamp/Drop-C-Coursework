@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\ProjectDefaultFiles\App.xaml
-8931974452
+11-1326035041
 
-19486725701
+22-1153246958
 212909912682
-Windows\AcceptOrderProducts.xaml;Windows\AddNewWareItemWindow.xaml;Windows\AuthorizationGuard.xaml;Windows\AuthWindow.xaml;Windows\MoreInfoWareItemWindow.xaml;Windows\RegistrationForAdminWindow.xaml;Windows\RegistrationWindow.xaml;Windows\WorkSpaceWindow.xaml;
+Windows\AuthWindows\AuthWindow.xaml;Windows\AuthWindows\Guards\AuthorizationGuard.xaml;Windows\AuthWindows\RegistrationWindow.xaml;Windows\MainWindows\Category\AddNewCategoryWindow.xaml;Windows\MainWindows\Manufacturer\AddNewManufacturerWindow.xaml;Windows\MainWindows\Orders\AcceptOrderProducts.xaml;Windows\MainWindows\Orders\MoreInfoOrderItemWindow.xaml;Windows\MainWindows\Profile\RegistrationForAdminWindow.xaml;Windows\MainWindows\Ware\AddNewWareItemWindow.xaml;Windows\MainWindows\Ware\MoreInfoWareItemWindow.xaml;Windows\MainWindows\WorkSpaceWindow.xaml;
 
 False
 

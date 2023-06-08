@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Couresach;
@@ -19,4 +20,6 @@ public class Ware
     public int? Manufacturer_id { get; set; }
     [ForeignKey("Manufacturer_id")]
     public Manufacturer? ManufacturerEntity { get; set; }
+    
+    public List<Order>? OrderEntity { get; set; }
 }

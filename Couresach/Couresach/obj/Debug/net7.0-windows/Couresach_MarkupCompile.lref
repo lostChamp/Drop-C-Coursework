@@ -1,10 +1,13 @@
 ﻿
 
-FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\AcceptOrderProducts.xaml;;
-FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\AuthorizationGuard.xaml;;
-FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\AuthWindow.xaml;;
-FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\MoreInfoWareItemWindow.xaml;;
-FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\RegistrationForAdminWindow.xaml;;
-FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\RegistrationWindow.xaml;;
-FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\WorkSpaceWindow.xaml;;
+FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\AuthWindows\AuthWindow.xaml;;
+FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\AuthWindows\Guards\AuthorizationGuard.xaml;;
+FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\AuthWindows\RegistrationWindow.xaml;;
+FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\MainWindows\Category\AddNewCategoryWindow.xaml;;
+FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\MainWindows\Manufacturer\AddNewManufacturerWindow.xaml;;
+FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\MainWindows\Orders\AcceptOrderProducts.xaml;;
+FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\MainWindows\Orders\MoreInfoOrderItemWindow.xaml;;
+FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\MainWindows\Profile\RegistrationForAdminWindow.xaml;;
+FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\MainWindows\Ware\MoreInfoWareItemWindow.xaml;;
+FC:\Users\Константин\Desktop\Coursework\Couresach\Couresach\Windows\MainWindows\WorkSpaceWindow.xaml;;
 
