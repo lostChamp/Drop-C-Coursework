@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Couresach.Windows.MainWindows.Orders"
         mc:Ignorable="d"
-        Title="MoreInfoOrderItemWindow" Height="450" Width="800">
+        Title="MoreInfoOrderItemWindow" Height="450" Width="800" Background="LightBlue">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

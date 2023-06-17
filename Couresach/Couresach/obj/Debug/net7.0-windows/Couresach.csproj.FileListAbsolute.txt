@@ -98,3 +98,7 @@ C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\n
 C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\Windows\MainWindows\Manufacturer\AddNewManufacturerWindow.g.cs
 C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\Windows\MainWindows\Category\AddNewCategoryWindow.baml
 C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\Windows\MainWindows\Manufacturer\AddNewManufacturerWindow.baml
+C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\bin\Debug\net7.0-windows\MaterialDesignColors.dll
+C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\bin\Debug\net7.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\bin\Debug\net7.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\Константин\Desktop\Coursework\Couresach\Couresach\obj\Debug\net7.0-windows\ProjectDefaultFiles\App.baml

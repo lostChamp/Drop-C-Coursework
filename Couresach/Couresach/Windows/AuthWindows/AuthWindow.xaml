@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Couresach"
         mc:Ignorable="d"
-        Title="Авторизация" Height="500" Width="350" ResizeMode="NoResize">
+        Title="Авторизация" Height="500" Width="400" ResizeMode="NoResize" Background="LightBlue">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

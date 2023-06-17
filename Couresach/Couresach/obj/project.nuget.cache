@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "QagD2sC/GG9LwAClmtrSYfI3c0pQTbIaJf9UU2zDEBIAc2BfbuSWj5QArnuvKIh9A27hWVOq4IAP71xfMYUrRQ==",
+  "dgSpecHash": "xDFpQ6RD4YvCAJmPiJ68vUPwuWNjhTmrxVVGKRNJO9uwjw6weyNRz/F4sixs3Cy68uLCD0epFOwq0Ip3QlB9/w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Константин\\Desktop\\Coursework\\Couresach\\Couresach\\Couresach.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Константин\\.nuget\\packages\\materialdesigncolors\\2.1.5-ci281\\materialdesigncolors.2.1.5-ci281.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\materialdesignthemes\\4.10.0-ci281\\materialdesignthemes.4.10.0-ci281.nupkg.sha512",
     "C:\\Users\\Константин\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0-preview.4.23259.3\\microsoft.entityframeworkcore.8.0.0-preview.4.23259.3.nupkg.sha512",
     "C:\\Users\\Константин\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0-preview.4.23259.3\\microsoft.entityframeworkcore.abstractions.8.0.0-preview.4.23259.3.nupkg.sha512",
     "C:\\Users\\Константин\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.0-preview.4.23259.3\\microsoft.entityframeworkcore.analyzers.8.0.0-preview.4.23259.3.nupkg.sha512",
@@ -17,6 +19,7 @@
     "C:\\Users\\Константин\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0-preview.4.23259.5\\microsoft.extensions.logging.abstractions.8.0.0-preview.4.23259.5.nupkg.sha512",
     "C:\\Users\\Константин\\.nuget\\packages\\microsoft.extensions.options\\8.0.0-preview.4.23259.5\\microsoft.extensions.options.8.0.0-preview.4.23259.5.nupkg.sha512",
     "C:\\Users\\Константин\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0-preview.4.23259.5\\microsoft.extensions.primitives.8.0.0-preview.4.23259.5.nupkg.sha512",
+    "C:\\Users\\Константин\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
     "C:\\Users\\Константин\\.nuget\\packages\\npgsql\\8.0.0-preview.4\\npgsql.8.0.0-preview.4.nupkg.sha512",
     "C:\\Users\\Константин\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.0-preview.4\\npgsql.entityframeworkcore.postgresql.8.0.0-preview.4.nupkg.sha512"
   ],

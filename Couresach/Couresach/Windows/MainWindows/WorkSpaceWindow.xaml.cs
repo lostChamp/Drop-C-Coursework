@@ -156,6 +156,7 @@ public partial class WorkSpaceWindow : Window
         TypeFilter.ItemsSource = categories;
         ManFilter.ItemsSource = mans;
         WareListBoxForProduct.Visibility = Visibility.Visible;
+        ServiceListBoxForProduct.Visibility = Visibility.Hidden;
     }
 
     private void SelectServices_Item(object sender, RoutedEventArgs e)
@@ -174,10 +175,12 @@ public partial class WorkSpaceWindow : Window
 
     private void SelectType_Item(object sender, RoutedEventArgs e)
     {
-        WareByTypes = DatabaseControl.GetAllByTypeWare(TypeFilter.SelectedValue.ToString());
-        WareListBoxForProduct.ItemsSource = null;
-        WareListBoxForProduct.ItemsSource = setWares(WareByTypes, WareByMan);
-        
+        if (TypeFilter.SelectedValue != null)
+        {
+            WareByTypes = DatabaseControl.GetAllByTypeWare(TypeFilter.SelectedValue.ToString());
+            WareListBoxForProduct.ItemsSource = null;
+            WareListBoxForProduct.ItemsSource = setWares(WareByTypes, WareByMan);
+        }
     }
 
     private void AddNewWareItem_Button(object sender, RoutedEventArgs e)
@@ -306,6 +309,11 @@ public partial class WorkSpaceWindow : Window
                 AcceptOrderProducts.ShowDialog();
                 OrderDataGrid.ItemsSource = null;
                 OrderDataGrid.ItemsSource = DatabaseControl.GetAllOrders();
+                OrderEx.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                OrderEx.Visibility = Visibility.Visible;
             }
         }
         else if(ServiceItemRadio.IsChecked == true)
@@ -319,6 +327,15 @@ public partial class WorkSpaceWindow : Window
                 AcceptOrderProducts.ShowDialog();
                 OrderDataGrid.ItemsSource = null;
                 OrderDataGrid.ItemsSource = DatabaseControl.GetAllOrders();
+                OrderEx.Visibility = Visibility.Hidden;
+                WareByMan = null;
+                WareByTypes = null;
+                TypeFilter.SelectedValue = null;
+                ManFilter.SelectedValue = null;
+            }
+            else
+            {
+                OrderEx.Visibility = Visibility.Visible;
             }
         }
         else
@@ -329,10 +346,12 @@ public partial class WorkSpaceWindow : Window
 
     private void ManFilter_Changed(object sender, SelectionChangedEventArgs e)
     {
-        WareByMan = DatabaseControl.GetAllByManWare(ManFilter.SelectedValue.ToString());
-        WareListBoxForProduct.ItemsSource = null;
-        WareListBoxForProduct.ItemsSource = setWares(WareByTypes, WareByMan);
-        
+        if (ManFilter.SelectedValue != null)
+        {
+            WareByMan = DatabaseControl.GetAllByManWare(ManFilter.SelectedValue.ToString());
+            WareListBoxForProduct.ItemsSource = null;
+            WareListBoxForProduct.ItemsSource = setWares(WareByTypes, WareByMan);
+        }
     }
 
     private List<Ware> setWares(List<Ware> WareByTypes, List<Ware> WareByMan)

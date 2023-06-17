@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Couresach"
         mc:Ignorable="d"
-        Title="Дроп С" Height="510" Width="800">
+        Title="Дроп С" Height="510" Width="800" Background="LightBlue">
     <Grid>
         <TabControl>
             <TabItem Header="Товары">
@@ -41,7 +41,6 @@
                             </StackPanel>
                         
                             <StackPanel Grid.Row="2">
-                                <TextBlock x:Name="dada"/>
                                 <TextBlock FontSize="20" Visibility="Hidden" x:Name="ManText">Производитель:</TextBlock>
                                 <ComboBox Height="40" Width="250" FontSize="20" Margin="5" x:Name="ManFilter"
                                           Visibility="Hidden" SelectedValuePath="Name"
@@ -55,10 +54,10 @@
                             </StackPanel>
                             
                             
-                            <StackPanel Grid.Row="3">
-                                <TextBlock x:Name="OrderEx" Visibility="Hidden">Вы ничего не выбрали!</TextBlock>
-                                <Button Margin="0 60 0 0" Width="200" Height="30" Click="CreateOrder_Button">Заказать!</Button>
-                            </StackPanel>
+                            <DockPanel Grid.Row="3">
+                                <TextBlock DockPanel.Dock="Top" x:Name="OrderEx" Visibility="Hidden" Margin="50  0 0 0">Вы ничего не выбрали!</TextBlock>
+                                <Button DockPanel.Dock="Top" Margin="0 60 0 0" Width="200" Height="30" Click="CreateOrder_Button">Заказать!</Button>
+                            </DockPanel>
                         </Grid>
                     </StackPanel>
                     <ListBox Grid.Column="1" x:Name="ServiceListBoxForProduct" Visibility="Hidden">

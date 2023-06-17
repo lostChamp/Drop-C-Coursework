@@ -8,10 +8,31 @@
     ".NETCoreApp,Version=v7.0": {
       "Couresach/1.0.0": {
         "dependencies": {
+          "MaterialDesignThemes": "4.10.0-ci281",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.0-preview.4"
         },
         "runtime": {
           "Couresach.dll": {}
+        }
+      },
+      "MaterialDesignColors/2.1.5-ci281": {
+        "runtime": {
+          "lib/net7.0/MaterialDesignColors.dll": {
+            "assemblyVersion": "2.1.5.0",
+            "fileVersion": "2.1.5.0"
+          }
+        }
+      },
+      "MaterialDesignThemes/4.10.0-ci281": {
+        "dependencies": {
+          "MaterialDesignColors": "2.1.5-ci281",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.39"
+        },
+        "runtime": {
+          "lib/net7.0/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "4.10.0.0",
+            "fileVersion": "4.10.0.0"
+          }
         }
       },
       "Microsoft.EntityFrameworkCore/8.0.0-preview.4.23259.3": {
@@ -148,6 +169,14 @@
           }
         }
       },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+        "runtime": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.39.4716"
+          }
+        }
+      },
       "Npgsql/8.0.0-preview.4": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0-preview.4.23259.5"
@@ -180,6 +209,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "MaterialDesignColors/2.1.5-ci281": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-twjS/c0kVBSi2ikymNMZYq+3MS8t9VrG2AwhA97reMGmCojJd1Fikf8Z8v5N7cBoXJodsMBWbuBgWpuz8nzN1A==",
+      "path": "materialdesigncolors/2.1.5-ci281",
+      "hashPath": "materialdesigncolors.2.1.5-ci281.nupkg.sha512"
+    },
+    "MaterialDesignThemes/4.10.0-ci281": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KDQIxUAyDHcmh3wbjvMFeEAjRObMwf6PAe/UVfnzFotG23REdCmCvEWu7EtvdwOHPm2twP6/SzcwC0moGwDNog==",
+      "path": "materialdesignthemes/4.10.0-ci281",
+      "hashPath": "materialdesignthemes.4.10.0-ci281.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/8.0.0-preview.4.23259.3": {
       "type": "package",
@@ -271,6 +314,13 @@
       "sha512": "sha512-Qhbqh8pmYkyts4X/5G8Tc6XaP7Pk7Ui7SwbKcu4pbLeSlzxe6BEVXrOjMot8R7LQR6JNI11k5rqgEg+9S5RXoQ==",
       "path": "microsoft.extensions.primitives/8.0.0-preview.4.23259.5",
       "hashPath": "microsoft.extensions.primitives.8.0.0-preview.4.23259.5.nupkg.sha512"
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8PZKqw9QOcu42xk8puY4P1+EXHL9YGOR9b7qhaYx5cILHul456H073tj99vyPcCt0W0781T9RwHqkx507ZyUpQ==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.39",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
     },
     "Npgsql/8.0.0-preview.4": {
       "type": "package",

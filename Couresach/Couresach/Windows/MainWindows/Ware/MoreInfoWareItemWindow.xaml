@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Couresach.Windows"
         mc:Ignorable="d"
-        Title="Подробнее" Height="600" Width="800">
+        Title="Подробнее" Height="600" Width="800" Background="LightBlue">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -73,7 +73,7 @@
             </ComboBox>
         </StackPanel>
         
-        <Image Grid.Column="1" Grid.RowSpan="8" Source="../Images/monkeyUser.jpg" Margin="5" x:Name="ItemImage"></Image>
+        <Image Grid.Column="1" Grid.RowSpan="7" Source="../Images/monkeyUser.jpg" Margin="5" x:Name="ItemImage"></Image>
         <Button Grid.Row="8" Height="30" Width="150" Grid.ColumnSpan="2" Click="EditWareItem_Button">Изменить</Button>
     </Grid>
 </Window>
