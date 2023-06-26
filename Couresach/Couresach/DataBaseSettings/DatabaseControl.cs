@@ -141,6 +141,14 @@ public class DatabaseControl
         }
     }
 
+    public static List<Order> GetOrdersByWareItem(int id)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            return ctx.Order?.Where(p => p.WareEntity.Id == id).ToList();
+        }
+    }
+
     //Service
     public static List<Service> GetAllServices()
     {
@@ -292,6 +300,15 @@ public class DatabaseControl
             return ctx.Category?.ToList();
         }
     }
+
+    public static void DeleteCategory(Category category)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            ctx.Category?.Remove(category);
+            ctx.SaveChanges();
+        }
+    }
     
     //Manufacturer
 
@@ -324,6 +341,15 @@ public class DatabaseControl
         using (DbAppContext ctx = new DbAppContext())
         {
             return ctx.Manufacturer?.Where(p => p.Id == id).FirstOrDefault();
+        }
+    }
+
+    public static void DeleteMan(Manufacturer item)
+    {
+        using (DbAppContext ctx = new DbAppContext())
+        {
+            ctx.Manufacturer?.Remove(item);
+            ctx.SaveChanges();
         }
     }
 }

@@ -45,4 +45,11 @@ public partial class RegistrationWindow : Window
         }
 
     }
+
+    private void Back_Button(object sender, RoutedEventArgs e)
+    {
+        Window AuthWindow = new AuthWindow();
+        AuthWindow.Show();
+        Close();
+    }
 }

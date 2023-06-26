@@ -256,8 +256,17 @@ public partial class WorkSpaceWindow : Window
         Ware item = WareDataGrid.SelectedItem as Ware;
         if (item != null)
         {
-            DatabaseControl.DeleteWareItem(item);
-            WareDataGrid.ItemsSource = DatabaseControl.GetAllWare();
+            List<Order> orders = DatabaseControl.GetOrdersByWareItem(item.Id);
+            if (orders.Count == 0)
+            {
+                DatabaseControl.DeleteWareItem(item);
+                WareDataGrid.ItemsSource = DatabaseControl.GetAllWare();
+            }
+            else
+            {
+                MessageBox.Show("Эта позиция используется в заказе!");
+            }
+            
         }
     }
 
@@ -287,12 +296,34 @@ public partial class WorkSpaceWindow : Window
 
     private void DeleteSelectedCategoryItemInDataGrid_Button(object sender, RoutedEventArgs e)
     {
-        
+        Category item = CategoryDataGrid.SelectedItem as Category;
+        List<Ware> wares = DatabaseControl.GetAllByTypeWare(item.Name);
+        if (wares.Count == 0)
+        {
+            DatabaseControl.DeleteCategory(item);
+            CategoryDataGrid.ItemsSource = null;
+            CategoryDataGrid.ItemsSource = DatabaseControl.GetAllCategories();
+        }
+        else
+        {
+            MessageBox.Show("Данная категория используется!");
+        }
     }
 
     private void DeleteSelectedManItemInDataGrid_Button(object sender, RoutedEventArgs e)
     {
-        
+        Manufacturer item = ManDataGrid.SelectedItem as Manufacturer;
+        List<Ware> wares = DatabaseControl.GetAllByManWare(item.Name);
+        if (wares.Count == 0)
+        {
+            DatabaseControl.DeleteMan(item);
+            ManDataGrid.ItemsSource = null;
+            ManDataGrid.ItemsSource = DatabaseControl.GetAllMans();
+        }
+        else
+        {
+            MessageBox.Show("Данный производитель используется!");
+        }
     }
 
     private void AddNewMan_Button(object sender, RoutedEventArgs e)

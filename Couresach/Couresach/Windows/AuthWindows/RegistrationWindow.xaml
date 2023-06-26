@@ -16,31 +16,37 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
         <TextBlock Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="26" FontWeight="SemiBold">Регистрация</TextBlock>
         
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
             
             <TextBlock FontSize="20" Margin="5, 0,0, 0">Email:</TextBlock>
             <TextBox Height="50" Width="250" FontSize="28" x:Name="EmailReg"></TextBox>
             <TextBlock x:Name="EmailEx" Margin="5, 0,0, 0" Visibility="Hidden">Пользователь с таким email сщуествует</TextBlock>
         </StackPanel>
         
-        <StackPanel Grid.Row="2">
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
             <TextBlock FontSize="20" Margin="5, 0,0, 0">Пароль:</TextBlock>
             <TextBox Height="50" Width="250" FontSize="28" x:Name="PasswordlReg"></TextBox>
             <TextBlock x:Name="PasswordEx" Margin="5, 0,0, 0" Visibility="Hidden">Пароль должен состоять минимум из 4 символов</TextBlock>
         </StackPanel>
         
-        <StackPanel Grid.Row="3">
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
             <TextBlock FontSize="20" Margin="5, 0,0, 0">ФИО:</TextBlock>
             <TextBox Height="50" Width="250" FontSize="28" x:Name="Full_NameReg"></TextBox>
         </StackPanel>
         
-        <StackPanel Grid.Row="4" >
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2">
             <TextBlock FontSize="20" Margin="5, 0,0, 0">Номер телефона:</TextBlock>
             <TextBox Height="50" Width="250" FontSize="28" x:Name="Phone_NumberReg"></TextBox>
         </StackPanel>
         
-        <Button Grid.Row="5" Height="50" Width="300" FontSize="20" Click="Registration_Button">Зарегистрироваться</Button>
+        <Button Grid.Row="5" Height="50" Width="190" FontSize="16" Click="Registration_Button">Зарегистрироваться</Button>
+        <Button Grid.Column="1" Grid.Row="5" Height="50" Width="190" FontSize="16" Click="Back_Button">Назад</Button>
     </Grid>
 </Window>
