@@ -120,38 +120,40 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                     <RowDefinition/>
+                                    <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 
-                                <TextBlock Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" FontSize="26" FontWeight="SemiBold">Редактирование</TextBlock>
+                                <Button Click="Back_Button">Назад</Button>
+                                <TextBlock Grid.Row="1" TextAlignment="Center" VerticalAlignment="Center" FontSize="26" FontWeight="SemiBold">Редактирование</TextBlock>
                                 
-                                <StackPanel Grid.Row="1">
+                                <StackPanel Grid.Row="2">
                                     <TextBlock FontSize="20" Margin="5, 0,0, 0">*Email:</TextBlock>
                                     <TextBox Height="50" Width="250" FontSize="28" x:Name="EmailEdit"></TextBox>
                                     <TextBlock x:Name="EmailEx" Margin="5, 0,0, 0" Visibility="Hidden">Пользователь с таким email сщуествует</TextBlock>
                                 </StackPanel>
                                 
-                                <StackPanel Grid.Row="2">
+                                <StackPanel Grid.Row="3">
                                     <TextBlock FontSize="20" Margin="5, 0,0, 0">*Пароль:</TextBlock>
                                     <TextBox Height="50" Width="250" FontSize="28" x:Name="PasswordEdit"></TextBox>
                                     <TextBlock x:Name="PasswordEx" Margin="5, 0,0, 0" Visibility="Hidden">Пароль должен состоять минимум из 4 символов</TextBlock>
                                 </StackPanel>
                                 
-                                <StackPanel Grid.Row="3" >
+                                <StackPanel Grid.Row="4" >
                                     <TextBlock FontSize="20" Margin="5, 0,0, 0">*Подтвердите пароль:</TextBlock>
                                     <TextBox Height="50" Width="250" FontSize="28" x:Name="PasswordEditReplay"></TextBox>
                                 </StackPanel>
                                 
-                                <StackPanel Grid.Row="4">
+                                <StackPanel Grid.Row="5">
                                     <TextBlock FontSize="20" Margin="5, 0,0, 0">*ФИО:</TextBlock>
                                     <TextBox Height="50" Width="250" FontSize="28" x:Name="Full_NameEdit"></TextBox>
                                 </StackPanel>
                                 
-                                <StackPanel Grid.Row="5" >
+                                <StackPanel Grid.Row="6" >
                                     <TextBlock FontSize="20" Margin="5, 0,0, 0">*Номер телефона:</TextBlock>
                                     <TextBox Height="50" Width="250" FontSize="28" x:Name="Phone_NumberEdit"></TextBox>
                                 </StackPanel>
                                 
-                                <Button Grid.Row="6" Height="50" Width="300" FontSize="20" Margin="10" Click="AcceptEditProfile_Button">Редактировать</Button>
+                                <Button Grid.Row="7" Height="50" Width="300" FontSize="20" Margin="10" Click="AcceptEditProfile_Button">Редактировать</Button>
                             </Grid>
                         </StackPanel>
                     </ScrollViewer>
@@ -165,7 +167,7 @@
                                             <StackPanel>
                                                 <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Описание заказа:"/>
                                                 <TextBlock Height="20" FontSize="16" Text="{Binding Path=Description}"/>
-                                                <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Статус"/>
+                                                <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Статус:"/>
                                                 <TextBlock Height="20" FontSize="16" Text="{Binding Path=Status}"/>
                                             </StackPanel>
                                         </DataTemplate>
@@ -173,8 +175,6 @@
                             </ListBox>
                             <TextBlock Text="У вас пока нет заказов!" Visibility="Hidden" x:Name="OrdersNotFound"
                                        FontSize="20" FontWeight="SemiBold"/>
-                            <!-- <TextBox x:Name="Description"></TextBox> -->
-                            <!-- <Button Click="NewOrder_Button">Заказать</Button> -->
                         </StackPanel>
                     </ScrollViewer>
                     

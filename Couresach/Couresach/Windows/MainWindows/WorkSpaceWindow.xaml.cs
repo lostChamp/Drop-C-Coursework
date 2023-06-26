@@ -73,6 +73,8 @@ public partial class WorkSpaceWindow : Window
         EditProfile.Visibility = Visibility.Visible;
         InfoProfile.Visibility = Visibility.Hidden;
         ScrollViewerEdit.Visibility = Visibility.Visible;
+        ScrollViewerOrders.Visibility = Visibility.Hidden;
+        OrdersNotFound.Visibility = Visibility.Hidden;
     }
 
     private void AcceptEditProfile_Button(object sender, RoutedEventArgs e)
@@ -123,6 +125,7 @@ public partial class WorkSpaceWindow : Window
             OrdersProfile.Visibility = Visibility.Visible;
             OrdersListBox.Visibility = Visibility.Visible;
             InfoProfile.Visibility = Visibility.Hidden;
+            EditProfile.Visibility = Visibility.Hidden;
         }
         else
         {
@@ -130,6 +133,8 @@ public partial class WorkSpaceWindow : Window
             OrdersNotFound.Visibility = Visibility.Visible;
             OrdersProfile.Visibility = Visibility.Visible;
             InfoProfile.Visibility = Visibility.Hidden;
+            EditProfile.Visibility = Visibility.Hidden;
+            ScrollViewerEdit.Visibility = Visibility.Hidden;
         }
         
     }
@@ -139,6 +144,7 @@ public partial class WorkSpaceWindow : Window
         InfoProfile.Visibility = Visibility.Visible;
         ScrollViewerOrders.Visibility = Visibility.Hidden;
         OrdersNotFound.Visibility = Visibility.Hidden;
+        EditProfile.Visibility = Visibility.Hidden;
     }
 
     private void SelectProducts_Item(object sender, RoutedEventArgs e)

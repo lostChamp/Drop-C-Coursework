@@ -1,0 +1,1647 @@
+dbug: 19.06.2023 16:26:31.908 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:31.949 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<User>()
+          .Where(p => p.Email == __email_0)
+          .FirstOrDefault()'
+dbug: 19.06.2023 16:26:32.169 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<User>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.Date_reg (DateOnly?), 1], [Property: User.Email (string), 2], [Property: User.Full_name (string), 3], [Property: User.Password (string), 4], [Property: User.Phone_number (string), 5], [Property: User.Role_id (int) Required FK Index, 6] }
+              SELECT TOP(1) u.Id, u.Date_reg, u.Email, u.Full_name, u.Password, u.Phone_number, u.Role_id
+              FROM User AS u
+              WHERE u.Email == @__email_0), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+          Couresach.DbAppContext, 
+          False, 
+          False, 
+          True
+      )
+          .SingleOrDefault()'
+dbug: 19.06.2023 16:26:32.214 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:32.253 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (39ms).
+dbug: 19.06.2023 16:26:32.255 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:32.262 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (51ms).
+dbug: 19.06.2023 16:26:32.267 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (59ms).
+dbug: 19.06.2023 16:26:32.272 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.439 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.448 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Date_reg", u."Email", u."Full_name", u."Password", u."Phone_number", u."Role_id"
+      FROM "User" AS u
+      WHERE u."Email" = @__email_0
+      LIMIT 1
+info: 19.06.2023 16:26:32.490 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (44ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."Id", u."Date_reg", u."Email", u."Full_name", u."Password", u."Phone_number", u."Role_id"
+      FROM "User" AS u
+      WHERE u."Email" = @__email_0
+      LIMIT 1
+dbug: 19.06.2023 16:26:32.534 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.565 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.574 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 78ms reading results.
+dbug: 19.06.2023 16:26:32.578 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.585 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (6ms).
+dbug: 19.06.2023 16:26:32.587 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:32.590 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.592 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (1ms).
+dbug: 19.06.2023 16:26:32.685 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:32.698 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Role>()
+          .FirstOrDefault(e => EF.Property<int>(e, "Id") == __p_0)'
+dbug: 19.06.2023 16:26:32.717 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<Role>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Role.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Role.Salary (double?), 1], [Property: Role.Value (string), 2] }
+              SELECT TOP(1) r.Id, r.Salary, r.Value
+              FROM Role AS r
+              WHERE r.Id == @__p_0), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Role>, 
+          Couresach.DbAppContext, 
+          False, 
+          False, 
+          True
+      )
+          .SingleOrDefault()'
+dbug: 19.06.2023 16:26:32.719 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:32.720 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:32.720 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:32.720 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:32.721 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (2ms).
+dbug: 19.06.2023 16:26:32.721 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.722 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.723 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT r."Id", r."Salary", r."Value"
+      FROM "Role" AS r
+      WHERE r."Id" = @__p_0
+      LIMIT 1
+info: 19.06.2023 16:26:32.731 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (9ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT r."Id", r."Salary", r."Value"
+      FROM "Role" AS r
+      WHERE r."Id" = @__p_0
+      LIMIT 1
+dbug: 19.06.2023 16:26:32.744 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Role' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.752 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.753 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 20ms reading results.
+dbug: 19.06.2023 16:26:32.753 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.753 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:32.754 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:32.754 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.754 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:32.801 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:32.806 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Ware>()
+          .Include(p => p.CategoryEntity)'
+dbug: 19.06.2023 16:26:32.820 CoreEventId.NavigationBaseIncluded[10112] (Microsoft.EntityFrameworkCore.Query) 
+      Including navigation: 'Ware.CategoryEntity'.
+dbug: 19.06.2023 16:26:32.882 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<Ware>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Client Projections:
+                  0 -> Dictionary<IProperty, int> { [Property: Ware.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Ware.Category_id (int?) FK Index, 1], [Property: Ware.Description (string), 2], [Property: Ware.Image (string) Required ValueGenerated.OnAdd, 3], [Property: Ware.Item (string), 4], [Property: Ware.Manufacturer_id (int?) FK Index, 5], [Property: Ware.Price (double?), 6], [Property: Ware.Quantity (int?), 7] }
+                  1 -> Dictionary<IProperty, int> { [Property: Category.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 8], [Property: Category.Name (string), 9] }
+              SELECT w.Id, w.Category_id, w.Description, w.Image, w.Item, w.Manufacturer_id, w.Price, w.Quantity, c.Id, c.Name
+              FROM Ware AS w
+              LEFT JOIN Category AS c ON w.Category_id == c.Id), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Ware>, 
+          Couresach.DbAppContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 19.06.2023 16:26:32.883 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:32.884 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:32.884 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:32.884 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:32.885 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:32.885 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.885 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.886 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity", c."Id", c."Name"
+      FROM "Ware" AS w
+      LEFT JOIN "Category" AS c ON w."Category_id" = c."Id"
+info: 19.06.2023 16:26:32.892 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity", c."Id", c."Name"
+      FROM "Ware" AS w
+      LEFT JOIN "Category" AS c ON w."Category_id" = c."Id"
+dbug: 19.06.2023 16:26:32.900 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.939 CoreEventId.ReferenceChangeDetected[10805] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The navigation 'Ware.CategoryEntity' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.946 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.951 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.952 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.953 CoreEventId.ReferenceChangeDetected[10805] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The navigation 'Ware.CategoryEntity' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.953 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.954 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.954 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.955 CoreEventId.ReferenceChangeDetected[10805] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The navigation 'Ware.CategoryEntity' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.955 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.955 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.956 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.956 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.957 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.957 CoreEventId.ReferenceChangeDetected[10805] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The navigation 'Ware.CategoryEntity' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.957 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:32.958 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.958 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 65ms reading results.
+dbug: 19.06.2023 16:26:32.958 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.959 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:32.959 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:32.959 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.960 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:32.965 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:32.967 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Order>()
+          .Include(p => p.UsersEntity)'
+dbug: 19.06.2023 16:26:32.969 CoreEventId.NavigationBaseIncluded[10112] (Microsoft.EntityFrameworkCore.Query) 
+      Including navigation: 'Order.UsersEntity'.
+dbug: 19.06.2023 16:26:32.980 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<Order>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Client Projections:
+                  0 -> Dictionary<IProperty, int> { [Property: Order.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Order.Description (string), 1], [Property: Order.Service_id (int?) FK Index, 2], [Property: Order.Status (string), 3], [Property: Order.User_id (int) Required FK Index, 4], [Property: Order.Ware_id (int?) FK Index, 5] }
+                  1 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 6], [Property: User.Date_reg (DateOnly?), 7], [Property: User.Email (string), 8], [Property: User.Full_name (string), 9], [Property: User.Password (string), 10], [Property: User.Phone_number (string), 11], [Property: User.Role_id (int) Required FK Index, 12] }
+              SELECT o.Id, o.Description, o.Service_id, o.Status, o.User_id, o.Ware_id, u.Id, u.Date_reg, u.Email, u.Full_name, u.Password, u.Phone_number, u.Role_id
+              FROM Order AS o
+              INNER JOIN User AS u ON o.User_id == u.Id), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Order>, 
+          Couresach.DbAppContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 19.06.2023 16:26:32.981 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:32.982 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:32.982 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:32.982 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:32.983 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:32.983 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.983 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:32.984 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT o."Id", o."Description", o."Service_id", o."Status", o."User_id", o."Ware_id", u."Id", u."Date_reg", u."Email", u."Full_name", u."Password", u."Phone_number", u."Role_id"
+      FROM "Order" AS o
+      INNER JOIN "User" AS u ON o."User_id" = u."Id"
+info: 19.06.2023 16:26:32.988 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT o."Id", o."Description", o."Service_id", o."Status", o."User_id", o."Ware_id", u."Id", u."Date_reg", u."Email", u."Full_name", u."Password", u."Phone_number", u."Role_id"
+      FROM "Order" AS o
+      INNER JOIN "User" AS u ON o."User_id" = u."Id"
+dbug: 19.06.2023 16:26:32.992 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Order' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.006 CoreEventId.ReferenceChangeDetected[10805] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The navigation 'Order.UsersEntity' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.007 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.008 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Order' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.009 CoreEventId.ReferenceChangeDetected[10805] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The navigation 'Order.UsersEntity' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.009 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.009 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Order' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.010 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Order' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.010 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Order' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.011 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Order' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.011 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Order' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.012 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Order' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.012 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Order' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.012 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Order' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.013 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.014 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 24ms reading results.
+dbug: 19.06.2023 16:26:33.014 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.015 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:33.015 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:33.015 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.015 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:33.017 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:33.019 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Category>()'
+dbug: 19.06.2023 16:26:33.022 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<Category>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Category.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Category.Name (string), 1] }
+              SELECT c.Id, c.Name
+              FROM Category AS c), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Category>, 
+          Couresach.DbAppContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 19.06.2023 16:26:33.023 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:33.023 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:33.024 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:33.024 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:33.024 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:33.024 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.025 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.025 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+info: 19.06.2023 16:26:33.027 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+dbug: 19.06.2023 16:26:33.028 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.028 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.029 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.029 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.029 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.030 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.030 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 2ms reading results.
+dbug: 19.06.2023 16:26:33.031 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.031 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:33.031 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:33.032 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.032 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:33.034 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:33.035 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Manufacturer>()'
+dbug: 19.06.2023 16:26:33.038 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<Manufacturer>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Manufacturer.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Manufacturer.Name (string), 1] }
+              SELECT m.Id, m.Name
+              FROM Manufacturer AS m), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Manufacturer>, 
+          Couresach.DbAppContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 19.06.2023 16:26:33.039 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:33.040 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:33.040 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:33.040 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:33.040 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:33.041 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.041 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.041 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+info: 19.06.2023 16:26:33.045 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+dbug: 19.06.2023 16:26:33.048 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.052 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.053 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.053 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:33.054 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.054 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 8ms reading results.
+dbug: 19.06.2023 16:26:33.054 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.055 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:33.055 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:33.056 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:33.056 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:41.980 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:41.981 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Service>()'
+dbug: 19.06.2023 16:26:41.987 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<Service>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Service.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Service.Description (string), 1], [Property: Service.Name (string), 2], [Property: Service.Price (double?), 3] }
+              SELECT s.Id, s.Description, s.Name, s.Price
+              FROM Service AS s), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Service>, 
+          Couresach.DbAppContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 19.06.2023 16:26:41.988 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:41.988 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:41.989 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:41.989 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:41.989 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:41.989 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:41.990 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:41.990 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."Description", s."Name", s."Price"
+      FROM "Service" AS s
+info: 19.06.2023 16:26:41.993 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."Description", s."Name", s."Price"
+      FROM "Service" AS s
+dbug: 19.06.2023 16:26:41.997 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Service' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.004 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.004 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 10ms reading results.
+dbug: 19.06.2023 16:26:42.005 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.005 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:42.005 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:42.005 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.006 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:42.347 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:42.348 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:42.349 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:42.349 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:42.349 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:42.350 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:42.350 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.350 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.351 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."Description", s."Name", s."Price"
+      FROM "Service" AS s
+info: 19.06.2023 16:26:42.353 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."Description", s."Name", s."Price"
+      FROM "Service" AS s
+dbug: 19.06.2023 16:26:42.353 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Service' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.354 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.354 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+dbug: 19.06.2023 16:26:42.354 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.355 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:42.355 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:42.355 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.355 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:42.670 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:42.671 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Ware>()
+          .Where(p => p.Quantity > (int?)0)'
+dbug: 19.06.2023 16:26:42.675 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<Ware>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Ware.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Ware.Category_id (int?) FK Index, 1], [Property: Ware.Description (string), 2], [Property: Ware.Image (string) Required ValueGenerated.OnAdd, 3], [Property: Ware.Item (string), 4], [Property: Ware.Manufacturer_id (int?) FK Index, 5], [Property: Ware.Price (double?), 6], [Property: Ware.Quantity (int?), 7] }
+              SELECT w.Id, w.Category_id, w.Description, w.Image, w.Item, w.Manufacturer_id, w.Price, w.Quantity
+              FROM Ware AS w
+              WHERE w.Quantity > 0), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Ware>, 
+          Couresach.DbAppContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 19.06.2023 16:26:42.676 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:42.676 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:42.676 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:42.677 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:42.677 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:42.677 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.677 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.678 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity"
+      FROM "Ware" AS w
+      WHERE w."Quantity" > 0
+info: 19.06.2023 16:26:42.680 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity"
+      FROM "Ware" AS w
+      WHERE w."Quantity" > 0
+dbug: 19.06.2023 16:26:42.680 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.681 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.681 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.681 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.682 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.682 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.682 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.682 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.683 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.683 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.683 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 3ms reading results.
+dbug: 19.06.2023 16:26:42.684 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.684 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:42.685 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:42.685 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.685 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:42.686 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:42.687 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:42.687 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:42.687 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:42.687 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:42.688 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:42.688 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.688 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.688 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+info: 19.06.2023 16:26:42.692 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+dbug: 19.06.2023 16:26:42.693 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.693 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.693 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.694 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.694 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.694 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.694 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+dbug: 19.06.2023 16:26:42.694 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.695 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:42.695 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:42.695 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.695 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:42.696 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:42.696 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:42.697 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:42.697 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:42.697 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:42.698 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:42.698 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.698 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.698 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+info: 19.06.2023 16:26:42.700 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+dbug: 19.06.2023 16:26:42.701 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.701 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.702 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.702 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:42.702 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.703 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 2ms reading results.
+dbug: 19.06.2023 16:26:42.703 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.704 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:42.704 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:42.704 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:42.705 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:43.071 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:43.075 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:43.076 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:43.076 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:43.076 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:43.076 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:43.077 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.077 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.078 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity"
+      FROM "Ware" AS w
+      WHERE w."Quantity" > 0
+info: 19.06.2023 16:26:43.080 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity"
+      FROM "Ware" AS w
+      WHERE w."Quantity" > 0
+dbug: 19.06.2023 16:26:43.080 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.081 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.081 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.081 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.082 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.082 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.082 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.083 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.083 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.083 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.084 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 3ms reading results.
+dbug: 19.06.2023 16:26:43.084 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.084 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:43.084 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:43.085 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.085 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:43.088 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:43.088 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:43.089 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:43.089 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:43.090 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:43.090 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:43.090 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.091 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.092 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+info: 19.06.2023 16:26:43.094 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+dbug: 19.06.2023 16:26:43.094 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.094 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.095 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.095 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.096 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.096 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.096 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 2ms reading results.
+dbug: 19.06.2023 16:26:43.097 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.097 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:43.097 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:43.098 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.098 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:43.099 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:43.099 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:43.099 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:43.099 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:43.100 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:43.100 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:43.100 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.101 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.101 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+info: 19.06.2023 16:26:43.103 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+dbug: 19.06.2023 16:26:43.104 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.104 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.104 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.105 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.105 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.105 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+dbug: 19.06.2023 16:26:43.105 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.106 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:43.106 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:43.106 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.107 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:43.880 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:43.881 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:43.881 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:43.882 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:43.882 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:43.883 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:43.883 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.883 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.884 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."Description", s."Name", s."Price"
+      FROM "Service" AS s
+info: 19.06.2023 16:26:43.886 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."Description", s."Name", s."Price"
+      FROM "Service" AS s
+dbug: 19.06.2023 16:26:43.886 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Service' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:43.886 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.887 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+dbug: 19.06.2023 16:26:43.887 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.887 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:43.888 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:43.888 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:43.888 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:44.263 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:44.264 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:44.264 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:44.265 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:44.265 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:44.265 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:44.265 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.266 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.266 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity"
+      FROM "Ware" AS w
+      WHERE w."Quantity" > 0
+info: 19.06.2023 16:26:44.269 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity"
+      FROM "Ware" AS w
+      WHERE w."Quantity" > 0
+dbug: 19.06.2023 16:26:44.270 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.270 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.271 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.271 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.271 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.272 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.272 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.272 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.272 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.273 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.273 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 3ms reading results.
+dbug: 19.06.2023 16:26:44.273 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.274 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:44.274 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:44.274 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.275 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:44.276 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:44.277 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:44.277 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:44.278 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:44.278 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:44.278 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:44.278 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.279 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.279 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+info: 19.06.2023 16:26:44.281 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+dbug: 19.06.2023 16:26:44.282 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.282 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.282 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.282 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.283 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.283 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.283 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+dbug: 19.06.2023 16:26:44.284 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.284 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:44.284 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:44.285 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.285 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:44.286 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:44.286 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:44.287 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:44.287 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:44.287 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:44.288 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:44.288 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.288 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.289 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+info: 19.06.2023 16:26:44.291 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+dbug: 19.06.2023 16:26:44.291 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.291 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.292 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.292 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.292 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.293 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+dbug: 19.06.2023 16:26:44.293 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.293 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:44.294 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:44.294 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.294 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:44.717 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:44.717 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:44.718 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:44.718 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:44.718 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:44.719 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:44.719 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.719 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.719 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."Description", s."Name", s."Price"
+      FROM "Service" AS s
+info: 19.06.2023 16:26:44.722 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."Description", s."Name", s."Price"
+      FROM "Service" AS s
+dbug: 19.06.2023 16:26:44.722 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Service' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:44.723 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.723 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+dbug: 19.06.2023 16:26:44.724 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.724 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:44.725 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:44.725 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:44.725 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.060 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:45.060 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:45.061 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:45.061 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:45.061 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:45.062 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:45.062 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.062 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.063 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity"
+      FROM "Ware" AS w
+      WHERE w."Quantity" > 0
+info: 19.06.2023 16:26:45.065 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity"
+      FROM "Ware" AS w
+      WHERE w."Quantity" > 0
+dbug: 19.06.2023 16:26:45.065 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.066 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.066 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.066 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.067 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.067 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.067 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.068 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.068 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.068 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.069 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 3ms reading results.
+dbug: 19.06.2023 16:26:45.069 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.069 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.070 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:45.070 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.070 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.072 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:45.073 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:45.073 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:45.073 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:45.073 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:45.074 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:45.074 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.074 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.074 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+info: 19.06.2023 16:26:45.077 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+dbug: 19.06.2023 16:26:45.077 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.078 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.078 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.078 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.078 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.079 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.079 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+dbug: 19.06.2023 16:26:45.080 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.080 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.080 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:45.081 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.081 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.082 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:45.082 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:45.082 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:45.083 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:45.083 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:45.083 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:45.083 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.084 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.084 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+info: 19.06.2023 16:26:45.086 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+dbug: 19.06.2023 16:26:45.087 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.087 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.087 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.087 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.088 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.088 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+dbug: 19.06.2023 16:26:45.088 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.088 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.089 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:45.089 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.089 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.568 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:45.568 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:45.568 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:45.569 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:45.569 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:45.569 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:45.570 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.570 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.570 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."Description", s."Name", s."Price"
+      FROM "Service" AS s
+info: 19.06.2023 16:26:45.573 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."Description", s."Name", s."Price"
+      FROM "Service" AS s
+dbug: 19.06.2023 16:26:45.573 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Service' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.573 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.574 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+dbug: 19.06.2023 16:26:45.574 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.574 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.575 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:45.575 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.575 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.938 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:45.939 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:45.939 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:45.940 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:45.940 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:45.940 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:45.940 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.941 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.941 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity"
+      FROM "Ware" AS w
+      WHERE w."Quantity" > 0
+info: 19.06.2023 16:26:45.943 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity"
+      FROM "Ware" AS w
+      WHERE w."Quantity" > 0
+dbug: 19.06.2023 16:26:45.944 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.944 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.944 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.945 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.945 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.945 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.946 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.946 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.946 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.946 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.947 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 3ms reading results.
+dbug: 19.06.2023 16:26:45.947 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.947 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.947 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:45.948 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.948 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.950 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:45.951 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:45.951 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:45.951 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:45.951 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:45.952 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:45.952 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.952 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.953 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+info: 19.06.2023 16:26:45.955 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+dbug: 19.06.2023 16:26:45.955 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.955 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.956 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.956 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.956 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.957 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.957 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 2ms reading results.
+dbug: 19.06.2023 16:26:45.957 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.958 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.958 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:45.958 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.959 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.959 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:45.960 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:45.960 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:45.961 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:45.961 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:45.961 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:45.962 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.962 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.963 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+info: 19.06.2023 16:26:45.964 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+dbug: 19.06.2023 16:26:45.965 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.965 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.966 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.966 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:45.966 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.966 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+dbug: 19.06.2023 16:26:45.966 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.967 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:45.967 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:45.967 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:45.967 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:46.511 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:46.512 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:46.512 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:46.513 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:46.513 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:46.513 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:46.513 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:46.514 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:46.514 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."Description", s."Name", s."Price"
+      FROM "Service" AS s
+info: 19.06.2023 16:26:46.516 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."Id", s."Description", s."Name", s."Price"
+      FROM "Service" AS s
+dbug: 19.06.2023 16:26:46.517 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Service' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:46.517 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:46.517 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+dbug: 19.06.2023 16:26:46.518 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:46.518 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:46.518 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:46.519 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:46.519 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:47.104 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:47.105 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:47.106 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:47.106 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:47.106 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:47.106 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:47.107 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.107 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.107 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity"
+      FROM "Ware" AS w
+      WHERE w."Quantity" > 0
+info: 19.06.2023 16:26:47.109 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT w."Id", w."Category_id", w."Description", w."Image", w."Item", w."Manufacturer_id", w."Price", w."Quantity"
+      FROM "Ware" AS w
+      WHERE w."Quantity" > 0
+dbug: 19.06.2023 16:26:47.110 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.110 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.110 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.111 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.111 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.111 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.111 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.112 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.112 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Ware' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.112 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.113 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 2ms reading results.
+dbug: 19.06.2023 16:26:47.113 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.113 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:47.113 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:47.113 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.114 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:47.115 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:47.116 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:47.116 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:47.116 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:47.117 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:47.117 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:47.117 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.118 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.118 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+info: 19.06.2023 16:26:47.120 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."Id", c."Name"
+      FROM "Category" AS c
+dbug: 19.06.2023 16:26:47.120 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.120 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.121 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.121 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.121 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.121 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.122 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+dbug: 19.06.2023 16:26:47.122 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.122 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:47.122 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:47.122 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.122 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:47.123 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.0-preview.4.23259.3 initialized 'DbAppContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:8.0.0-preview.4+6905ca96195703357be9f83983d0661e82ec6669' with options: None
+dbug: 19.06.2023 16:26:47.124 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 19.06.2023 16:26:47.124 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 19.06.2023 16:26:47.125 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 19.06.2023 16:26:47.125 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 19.06.2023 16:26:47.125 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 19.06.2023 16:26:47.125 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.126 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.126 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+info: 19.06.2023 16:26:47.128 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT m."Id", m."Name"
+      FROM "Manufacturer" AS m
+dbug: 19.06.2023 16:26:47.128 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.129 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.129 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.129 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'DbAppContext' started tracking 'Manufacturer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: 19.06.2023 16:26:47.129 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.130 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'coursach' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+dbug: 19.06.2023 16:26:47.130 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.130 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).
+dbug: 19.06.2023 16:26:47.131 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'DbAppContext' disposed.
+dbug: 19.06.2023 16:26:47.131 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'coursach' on server 'tcp://localhost:5432'.
+dbug: 19.06.2023 16:26:47.131 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database 'coursach' on server 'tcp://localhost:5432' (0ms).

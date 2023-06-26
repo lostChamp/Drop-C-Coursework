@@ -21,7 +21,7 @@ public class DbAppContext : DbContext
     {
         optionsBuilder.UseNpgsql(
             "Host=localhost;Username=user;Password=user;Database=coursach"
-        );
+        ).LogTo(s => File.AppendAllLines("dadada.txt", new []{s} ));
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
