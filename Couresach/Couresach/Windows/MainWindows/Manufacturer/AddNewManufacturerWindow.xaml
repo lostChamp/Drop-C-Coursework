@@ -17,6 +17,6 @@
         
         <TextBox Grid.Row="1" FontSize="26" Width="300" Height="40" x:Name="NameOfMan"></TextBox>
         
-        <Button Grid.Row="2" FontSize="20" Height="30" Width="250" Click="AddNewMan_Button">Добавить</Button>
+        <Button Grid.Row="2" FontSize="20" Height="40" Width="250" Click="AddNewMan_Button">Добавить</Button>
     </Grid>
 </Window>

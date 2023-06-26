@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Couresach.Windows"
         mc:Ignorable="d"
-        Title="Подробнее" Height="600" Width="800" Background="LightBlue">
+        Title="Подробнее" Height="700" Width="800" Background="LightBlue" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -28,12 +28,12 @@
         
         <StackPanel Grid.Row="1">
             <TextBlock FontSize="16" Margin="5">Название товара:</TextBlock>
-            <TextBox Height="20" FontSize="16" Margin="5 0" x:Name="ItemName"/>
+            <TextBox Height="30" FontSize="16" Margin="5 0" x:Name="ItemName"/>
         </StackPanel>
         
         <StackPanel Grid.Row="2">
             <TextBlock FontSize="16" Margin="5">Изображение:</TextBlock>
-            <Button Height="20" FontSize="14" Margin="5 0" Click="EditPhoto_Button">Изменить</Button>
+            <Button Height="25" FontSize="14" Margin="5 0" Click="EditPhoto_Button">Изменить</Button>
         </StackPanel>
         
         <StackPanel Grid.Row="3">
@@ -43,12 +43,12 @@
         
         <StackPanel Grid.Row="4">
             <TextBlock FontSize="16" Margin="5">Количество:</TextBlock>
-            <TextBox Height="20" FontSize="16" Margin="5 0" x:Name="ItemQuantity"/>
+            <TextBox Height="25" FontSize="16" Margin="5 0" x:Name="ItemQuantity"/>
         </StackPanel>
         
         <StackPanel Grid.Row="5">
             <TextBlock FontSize="16" Margin="5">Категория:</TextBlock>
-            <ComboBox Height="20" FontSize="14" Margin="5 0" x:Name="CategoryComboBox" SelectedValuePath="Name">
+            <ComboBox Height="25" FontSize="14" Margin="5 0" x:Name="CategoryComboBox" SelectedValuePath="Name">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Path=Name}"></TextBlock>
@@ -59,12 +59,12 @@
         
         <StackPanel Grid.Row="6">
             <TextBlock FontSize="16" Margin="5">Цена:</TextBlock>
-            <TextBox Height="20" FontSize="16" Margin="5 0" x:Name="ItemPrice"/>
+            <TextBox Height="30" FontSize="16" Margin="5 0" x:Name="ItemPrice"/>
         </StackPanel>
         
         <StackPanel Grid.Row="7">
             <TextBlock FontSize="16" Margin="5">Производитель:</TextBlock>
-            <ComboBox Height="20" FontSize="14" Margin="5 0" x:Name="ManComboBox" SelectedValuePath="Name">
+            <ComboBox Height="25" FontSize="14" Margin="5 0" x:Name="ManComboBox" SelectedValuePath="Name">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Path=Name}"></TextBlock>

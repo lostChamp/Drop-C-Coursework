@@ -11,10 +11,18 @@ public partial class AddNewManufacturerWindow : Window
 
     private void AddNewMan_Button(object sender, RoutedEventArgs e)
     {
-        DatabaseControl.CreateNewMan(new Couresach.Manufacturer()
+        if (NameOfMan.Text != "")
         {
-            Name = NameOfMan.Text
-        });
-        Close();
+            DatabaseControl.CreateNewMan(new Couresach.Manufacturer()
+            {
+                Name = NameOfMan.Text
+            });
+            Close();
+        }
+        else
+        {
+            MessageBox.Show("Введите название производителя!");
+        }
+        
     }
 }

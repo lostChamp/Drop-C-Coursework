@@ -11,10 +11,17 @@ public partial class AddNewCategoryWindow : Window
 
     private void AddNewCategory_Button(object sender, RoutedEventArgs e)
     {
-        DatabaseControl.CreateNewCategory(new Couresach.Category()
+        if (NameOfCategory.Text != "")
         {
-            Name = NameOfCategory.Text
-        });
-        Close();
+            DatabaseControl.CreateNewCategory(new Couresach.Category()
+            {
+                Name = NameOfCategory.Text
+            });
+            Close();
+        }
+        else
+        {
+            MessageBox.Show("Введите название категории!");
+        }
     }
 }

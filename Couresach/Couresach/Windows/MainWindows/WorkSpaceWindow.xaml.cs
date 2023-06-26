@@ -79,8 +79,19 @@ public partial class WorkSpaceWindow : Window
 
     private void AcceptEditProfile_Button(object sender, RoutedEventArgs e)
     {
-        var userFlag = DatabaseControl.GetUserByEmail(EmailEdit.Text);
         
+        if (EmailEdit.Text == "" && PasswordEdit.Text == "" && PasswordEditReplay.Text == "" &&
+            Full_NameEdit.Text == "" && Phone_NumberEdit.Text == "")
+        {
+            MessageBox.Show("Все поля обязательные!");
+        }
+
+        if (PasswordEdit.Text != PasswordEditReplay.Text)
+        {
+            MessageBox.Show("Пароли должны совпадать!");
+        }
+        
+        var userFlag = DatabaseControl.GetUserByEmail(EmailEdit.Text);
         if (userFlag == null)
         {
             EmailEx.Visibility = Visibility.Hidden;
@@ -225,12 +236,15 @@ public partial class WorkSpaceWindow : Window
     private void MoreInfoWareItem_Button(object sender, RoutedEventArgs e)
     {
         Ware tempItem = WareDataGrid.SelectedItem as Ware;
-        Ware item = DatabaseControl.GetWareById(tempItem.Id);
-        if (item != null)
+        if (tempItem != null)
         {
-            Window MoreInfoWareItemWindow = new MoreInfoWareItemWindow(item);
-            MoreInfoWareItemWindow.Owner = this;
-            MoreInfoWareItemWindow.ShowDialog();
+            Ware item = DatabaseControl.GetWareById(tempItem.Id);
+            if (item != null)
+            {
+                Window MoreInfoWareItemWindow = new MoreInfoWareItemWindow(item);
+                MoreInfoWareItemWindow.Owner = this;
+                MoreInfoWareItemWindow.ShowDialog();
+            } 
         }
         
         WareDataGrid.ItemsSource = null;
