@@ -19,17 +19,25 @@ public partial class RegistrationForAdminWindow : Window
             EmailEx.Visibility = Visibility.Hidden;
             if (PasswordlReg.Text.Length >= 4)
             {
-                var role = DatabaseControl.GetRoleByValue(RoleListBox.SelectedValue.ToString());
-                DatabaseControl.RegistrationUser(new User
+                if (Full_NameReg.Text != "" && Phone_NumberReg.Text != "" && RoleListBox.SelectedValue != null)
                 {
-                    Email = EmailReg.Text,
-                    Password = PasswordlReg.Text,
-                    Full_name = Full_NameReg.Text,
-                    Phone_number = Phone_NumberReg.Text,
-                    Date_reg = DateOnly.FromDateTime(DateTime.Now),
-                    Role_id = role.Id,
-                });
-                Close();
+                    var role = DatabaseControl.GetRoleByValue(RoleListBox.SelectedValue.ToString());
+                    DatabaseControl.RegistrationUser(new User
+                    {
+                        Email = EmailReg.Text,
+                        Password = PasswordlReg.Text,
+                        Full_name = Full_NameReg.Text,
+                        Phone_number = Phone_NumberReg.Text,
+                        Date_reg = DateOnly.FromDateTime(DateTime.Now),
+                        Role_id = role.Id,
+                    });
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Все поля обязательные!");
+                }
+                
             }
             else
             {

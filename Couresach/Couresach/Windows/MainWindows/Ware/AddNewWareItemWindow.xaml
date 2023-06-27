@@ -22,12 +22,12 @@
         
         <StackPanel Grid.Row="1">
             <TextBlock FontSize="16" Margin="5">Название товара:</TextBlock>
-            <TextBox Height="20" FontSize="16" Margin="5 0" x:Name="ItemName"/>
+            <TextBox Height="30" FontSize="16" Margin="5 0" x:Name="ItemName"/>
         </StackPanel>
         
         <StackPanel Grid.Row="2">
             <TextBlock FontSize="16" Margin="5">Изображение:</TextBlock>
-            <Button Height="20" FontSize="14" Margin="5 0" x:Name="ItemImage" Click="AddImage_Button">Добавить</Button>
+            <Button Height="30" FontSize="14" Margin="5 0" x:Name="ItemImage" Click="AddImage_Button">Добавить</Button>
         </StackPanel>
         
         <StackPanel Grid.Row="3">
@@ -37,12 +37,12 @@
         
         <StackPanel Grid.Row="4">
             <TextBlock FontSize="16" Margin="5">Количество:</TextBlock>
-            <TextBox FontSize="16" Height="20" Margin="5 0" x:Name="ItemQuantity"/>
+            <TextBox FontSize="16" Height="30" Margin="5 0" x:Name="ItemQuantity"/>
         </StackPanel>
         
         <StackPanel Grid.Row="5">
             <TextBlock FontSize="16" Margin="5">Категория:</TextBlock>
-            <ComboBox Height="20" FontSize="14" Margin="5 0" x:Name="CategoryComboBox" SelectedValuePath="Name">
+            <ComboBox Height="30" FontSize="14" Margin="5 0" x:Name="CategoryComboBox" SelectedValuePath="Name">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Path=Name}"></TextBlock>
@@ -53,12 +53,12 @@
         
         <StackPanel Grid.Row="6">
             <TextBlock FontSize="16" Margin="5">Цена:</TextBlock>
-            <TextBox Height="20" FontSize="16" Margin="5 0" x:Name="ItemPrice"/>
+            <TextBox Height="30" FontSize="16" Margin="5 0" x:Name="ItemPrice"/>
         </StackPanel>
         
         <StackPanel Grid.Row="7">
             <TextBlock FontSize="16" Margin="5">Производитель:</TextBlock>
-            <ComboBox Height="20" FontSize="14" Margin="5 0" x:Name="ManComboBox" SelectedValuePath="Name">
+            <ComboBox Height="30" FontSize="14" Margin="5 0" x:Name="ManComboBox" SelectedValuePath="Name">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Path=Name}"></TextBlock>

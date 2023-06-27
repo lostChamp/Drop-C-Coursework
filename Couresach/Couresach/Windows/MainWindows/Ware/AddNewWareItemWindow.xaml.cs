@@ -26,17 +26,27 @@ public partial class AddNewWareItemWindow : Window
             filePath = System.IO.Path.Combine(_imageSource, _img.SafeFileName);
             File.Copy(_img.FileName, filePath, true);
         }
-        DatabaseControl.CreateNewWareItem(new Ware
+
+        if (ItemName.Text != "" && ItemDescription.Text != "" && ItemQuantity.Text != "" &&
+            CategoryComboBox.SelectedValue != null && ItemPrice.Text != "" && ManComboBox.SelectedValue != null)
         {
-            Item = ItemName.Text,
-            Image = filePath,
-            Description = ItemDescription.Text,
-            Quantity = int.Parse(ItemQuantity.Text),
-            Category_id = DatabaseControl.GetCategoryByName(CategoryComboBox.SelectedValue.ToString()).Id,
-            Price = int.Parse(ItemPrice.Text),
-            Manufacturer_id = DatabaseControl.GetManByName(ManComboBox.SelectedValue.ToString()).Id,
-        });
-        Close();
+            DatabaseControl.CreateNewWareItem(new Ware
+            {
+                Item = ItemName.Text,
+                Image = filePath,
+                Description = ItemDescription.Text,
+                Quantity = int.Parse(ItemQuantity.Text),
+                Category_id = DatabaseControl.GetCategoryByName(CategoryComboBox.SelectedValue.ToString()).Id,
+                Price = int.Parse(ItemPrice.Text),
+                Manufacturer_id = DatabaseControl.GetManByName(ManComboBox.SelectedValue.ToString()).Id,
+            });
+            Close(); 
+        }
+        else
+        {
+            MessageBox.Show("Заполните все поля!");
+        }
+        
     }
 
     private void AddImage_Button(object sender, RoutedEventArgs e)

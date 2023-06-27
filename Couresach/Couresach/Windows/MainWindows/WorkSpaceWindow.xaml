@@ -66,7 +66,7 @@
                                         <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Название услуги:"/>
                                         <TextBlock Height="20" FontSize="16" Text="{Binding Path=Name}"/>
                                         <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Описание услуги:"/>
-                                        <TextBlock Height="20" FontSize="16" Text="{Binding Path=Description}"/>
+                                        <TextBlock Height="20" FontSize="16" TextWrapping="Wrap" Text="{Binding Path=Description}"/>
                                         <TextBlock Height="20" FontSize="16" FontWeight="SemiBold" Text="Цена:"/>
                                         <TextBlock Height="20" FontSize="16" Text="{Binding Path=Price}"/>
                                     </StackPanel>
